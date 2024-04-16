@@ -1,29 +1,113 @@
 
-function fAbrirModalLogin(){   
+function fAbrirModalLogin() {
     document.querySelector("#form_login_inicio_sesion").style.display = "flex";
-}   
-function fCerrarLogin(){
+}
+function fCerrarLogin() {
     document.querySelector("#form_login_inicio_sesion").style.display = "none";
 }
-function fExpandirLogin(){ 
+function fExpandirLogin() {
     document.querySelector("#expandir_login").style.display = "none";
     document.querySelector("#div_registro").style.flexGrow = 1;
     document.querySelector("#div_iniciar_sesion").style.flexGrow = 0;
     document.querySelector("#div_iniciar_sesion").style.width = 150 + "px";
     document.querySelector("#form_registro").style.display = "block";
     document.querySelector("#form_login").style.display = "none";
-    setTimeout(function() {
+    setTimeout(function () {
         document.querySelector("#expandir_registro").style.display = "flex";
-    }, 1000);}
-function fExpandirRegistro(){
+    }, 1000);
+}
+function fExpandirRegistro() {
     document.querySelector("#div_registro").style.flexGrow = 0;
     document.querySelector("#div_iniciar_sesion").style.flexGrow = 1;
     document.querySelector("#expandir_registro").style.display = " none";
     document.querySelector("#div_registro").style.width = 150 + "px";
-    document.querySelector("#div_iniciar_sesion").style.width = 100 +"vh";
+    document.querySelector("#div_iniciar_sesion").style.width = 100 + "vh";
     document.querySelector("#form_registro").style.display = "none";
     document.querySelector("#form_login").style.display = "block";
-    setTimeout(function() {
+    setTimeout(function () {
         document.querySelector("#expandir_login").style.display = "flex";
     }, 1000);
+}
+
+
+
+
+function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+
+
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        console.log('User signed out.');
+    });
+}
+
+
+
+
+
+function fControlRegistrar() {
+    // Leer el nombre
+    let nombre = document.querySelector("#nombre").value;
+    if (nombre == "") {
+        document.querySelector("#rdiv_error").innerHTML = "Escriba su Nombre";
+        return;
+    }
+    // Leer el nombre de usuario
+    let nombre_usu = document.querySelector("#nombre_usuario").value;
+    if (nombre_usu == "") {
+        document.querySelector("#rdiv_error").innerHTML = "Escriba su Nombre de usuario";
+        return;
+    }
+    // Leer el email
+    let email =  document.querySelector("#email_registro").value;
+    if (email == "") {
+        document.querySelector("#rdiv_error").innerHTML = "Escriba su email";
+        return;
+    }
+    // Leer el password
+    let password = document.querySelector("#password_registro").value;
+    let password2 = document.querySelector("#rpassword_registro").value;
+    if (password == "") {
+        document.querySelector("#rdiv_error").innerHTML = "Escriba su Contraseña";
+        return;
+    }
+    // Comprobar los password
+    if (password != password2) {
+        document.querySelector("#rdiv_error").innerHTML = "Los password no coinciden";
+        return;
+    }
+    
+    let URL = 'assets/php/servidor.php?peticion=ControlRegistro';
+    URL += "&nombre=" + nombre;
+    URL += "&nombre_usu=" + nombre_usu;
+    URL += "&email=" + email;
+    URL += "&password=" + password;
+    console.log("Parametros del login")
+    console.log("nombre: ",nombre)
+    console.log("nombre_usu: ",nombre_usu)
+    console.log("email: ",email)
+    console.log("password: ",password)
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log("REGISTRO", data);
+            if (data.datos == 0) {
+                document.querySelector("#rdiv_error").innerHTML = "Inténtelo más tarde";
+                return;
+            }
+            // // Mostrar un mensaje
+            // document.querySelector("#mensaje").innerHTML = "Registro correcto";
+            // fMostrar("form_mensaje");
+            // // Pasado x tiempo, mostrar el formulario de login
+            // evento = setTimeout(fCerrarEvento, 2000);
+
+
+        })
 }

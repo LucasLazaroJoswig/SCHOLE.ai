@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="assets/estilos/estilos.css">
     <script src="assets/scripts/scripts.js"></script>
 
-    
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="76666712146-7s9nc15pikb8fikrb7h2ihejbibdb96j.apps.googleusercontent.com">
     
 </head>
 
@@ -28,14 +29,23 @@
                         </td>
                     </tr>
                     <tr>
+                        <td><input type="text" id="nombre" name="nombre" placeholder="Deivi Daniel Perdomo"><br><br></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="nombre_usuario" name="nombre" placeholder="deivimpt56"><br><br></td>
+                    </tr>
+                    <tr>
                         <td><input type="email" id="email_registro" name="email" placeholder="ejemplo@gmail.com"><br><br></td>
                     </tr>
                     <tr>
                         <td><input type="password" id="password_registro" name="password" placeholder="Contraseña"><br><br></td>
                     </tr>
                     <tr>
+                        <td><input type="password" id="rpassword_registro" name="rpassword" placeholder="Repita la Contraseña"><br><br></td>
+                    </tr>
+                    <tr>
                         <td>
-                            <input type="submit"  value="Registrarse">
+                            <input type="button" value="Registrarse" onclick="fControlRegistrar()">
                     </tr>
                     <tr>
                         <td>
@@ -51,7 +61,11 @@
                 </table>
                 <br>
                 <br>
+
                 <div id="iniciar_sesion_google">Iniciar sesion con Google</div>
+
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <a href="#" onclick="signOut();">Sign out</a>
             </form>
            
         </div>
