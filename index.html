@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScholeAI</title>
+    <link rel="stylesheet" href="assets/estilos/estilos.css">
+    <script src="assets/scripts/scripts.js"></script>
+
+    
+    
+</head>
+
+<body>
+
+    <div id="form_login_inicio_sesion">
+        <div id="div_registro">*Logo*
+            <div id="expandir_registro" onclick="fExpandirRegistro()" title="Expandir registro"><</div>
+            <form id="form_registro">
+                <table>
+                    <th colspan="2" class="Titulo_de_Forms">
+                        Crear una nueva cuenta
+                    </th>
+                    
+                    <tr>
+                        <td>
+                            <div>&nbsp;</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="email" id="email_registro" name="email" placeholder="ejemplo@gmail.com"><br><br></td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" id="password_registro" name="password" placeholder="Contraseña"><br><br></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit"  value="Registrarse">
+                    </tr>
+                    <tr>
+                        <td>
+                            <div onclick="fCerrarLogin()" class="cerrar_modal_login">Cerrar</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="rdiv_error">&nbsp;</div>
+                        </td>
+                    </tr>
+                    
+                </table>
+                <br>
+                <br>
+                <div id="iniciar_sesion_google">Iniciar sesion con Google</div>
+            </form>
+           
+        </div>
+        <div id="div_iniciar_sesion">
+            <div id="expandir_login" onclick="fExpandirLogin()" title="Expandir login">></div>
+            <form id="form_login">
+                <table>
+                    <th class="Titulo_de_Forms">
+                        Inicio sesion
+                    </th>
+                    
+                    <tr>
+                        <td>
+                            <div>&nbsp;</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="email" id="email_login" name="email" placeholder="ejemplo@gmail.com"><br><br></td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" id="password_login" name="password" placeholder="Contraseña"></td>
+                    </tr>
+                    <tr>
+                        <td class="td_login">
+                            <input type="submit" id="btn-login" value="Iniciar sesión">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="div_error">&nbsp;</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div onclick="fCerrarLogin()" class="cerrar_modal_login">Cerrar</div>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+    </div>
+
+    
+    
+<header>
+    <div id="boton_login" onclick="fAbrirModalLogin()">Login</div>
+</header>
+
+<section>
+
+</section>
+
+<nav>
+
+</nav>
+
+<footer>
+    
+</footer>
+
+
+
+
+    
+</body>
+</html>
