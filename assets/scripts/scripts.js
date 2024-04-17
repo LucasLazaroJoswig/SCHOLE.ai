@@ -49,7 +49,48 @@ function signOut() {
 }
 
 
-
+function fControlLogin(){
+    // Leer el alias
+    let nombre_usu = document.querySelector("#nombre_usu").value;
+     // Comprobando que el alias no este vacio
+    if (nombre_usu == ""){
+      document.querySelector("#div_error").innerHTML = "Escriba su Nombre de usuario";
+      return;
+    }
+    // Leer el password
+    let password = document.querySelector("#password_login").value;
+     // Comprobando que el password no este vacio
+    if (password == ""){
+      document.querySelector("#div_error").innerHTML = "Escriba la Contraseña";
+      return;
+    }
+    // Buscar el alias y el password en la BBDD
+    let login_correcto = false;
+    let URL = 'assets/php/servidor.php?peticion=ControlLogin';
+    URL += "&nombre_usu=" + nombre_usu;
+    URL += "&password=" + password;
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+  
+            // Si es correcto
+            if (data.datos.length == 0){
+                document.querySelector("#div_error").innerHTML = "Usuario no registrado";
+                return;
+            }
+            usuario_logeado = data.datos[0];
+            
+            console.log("usuario logeado: ",usuario_logeado)
+            //  El login es correcto -> Cerrar modal del login
+            document.querySelector("#form_login_inicio_sesion").style.display = "none"; 
+            login_correcto = true;               
+        })
+        .finally( function(){
+            // fCancelar();
+  
+        })
+  }
 
 
 function fControlRegistrar() {
@@ -102,6 +143,7 @@ function fControlRegistrar() {
                 document.querySelector("#rdiv_error").innerHTML = "Inténtelo más tarde";
                 return;
             }
+            fExpandirRegistro();
             // // Mostrar un mensaje
             // document.querySelector("#mensaje").innerHTML = "Registro correcto";
             // fMostrar("form_mensaje");

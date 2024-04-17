@@ -5,10 +5,10 @@ if (isset($_REQUEST['peticion'])) {
         
         case "ControlLogin":
             // Recuperar parametros
-            $alias = $_REQUEST['alias'];
+            $nombre_usu = $_REQUEST['nombre_usu'];
             $password = $_REQUEST['password'];
             // Preparo el SQL   
-            $sql = "SELECT * FROM usuarios WHERE usu_alias = '$alias' AND usu_password=md5('$password')";
+            $sql = "SELECT * FROM usuarios WHERE nombre_usuario = '$nombre_usu' and contraseña=md5('$password')";
             $datos['sql']=$sql;
             // Ejecuto el SQL guardando el resultado
             $datos['datos'] = BBDD_CTRLR::Consultas($sql);
@@ -29,7 +29,7 @@ if (isset($_REQUEST['peticion'])) {
             echo json_encode($datos);  
             break;
 
-
+// SELECT * FROM usuarios WHERE nombre_usuario='deivipppp' and contraseña='deivi'
 
     }             
 }   
