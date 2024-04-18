@@ -1,3 +1,62 @@
+function fInicio(){
+	// -----------------------Script para el scroll-------------------------
+	// const panels = gsap.utils.toArray(".carousel-item");
+	const items = gsap.utils.toArray(".carousel-item");
+	// const controls = document.querySelectorAll(".carousel-navigation li");
+	// controls.forEach((item, i) => {
+	//   item.addEventListener("click", () => {
+	// 	gsap.to(window, { scrollTo: { y: items[i]} });
+	//   });
+	// });
+	
+	items.forEach((layer, i) => {
+	  if (i < items.length - 1) {
+		ScrollTrigger.create({
+		  trigger: layer,
+		  duration:1,
+		//pin: true,
+		  start: "top top",
+		//   pinSpacing: false,
+		  snap: 1,
+		//   onEnter: () => controls[i].classList.add("active"),
+		//   onLeave: () => controls[i].classList.remove("active"),
+		//   onEnterBack: () => controls[i].classList.add("active"),
+		//   onLeaveBack: () => controls[i].classList.remove("active")
+		});
+	  } else {
+		ScrollTrigger.create({
+		  trigger: layer,
+		  duration:1,
+		//   pin: true,
+		  start: "top",
+		//   pinSpacing: true,
+		  snap: 1,
+		//   onEnter: () => controls[i].classList.add("active"),
+		//   onLeave: () => controls[i].classList.remove("active"),
+		//   onEnterBack: () => controls[i].classList.add("active"),
+		//   onLeaveBack: () => controls[i].classList.remove("active")
+		});
+	  }
+	});
+	
+	// const tlfour = gsap.timeline({
+	//   scrollTrigger: {
+	// 	duration:0.5,
+	// 	trigger: ".carousel-inner",
+	// 	start: "top-=100px",
+	// 	end: "0",
+	// 	marker: true,
+	// 	toggleActions: "play none none reverse",
+	// 	endTrigger: panels[panels.length - 1]
+	//   }
+	// });
+	//----------------------------------------------------------------
+	
+
+}
+
+
+
 
 function fAbrirModalLogin() {
     document.querySelector("#form_login_inicio_sesion").style.display = "flex";

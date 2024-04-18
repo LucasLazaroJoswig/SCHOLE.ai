@@ -1,3 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel-inner{
+    width: 100%;
+  }
+  .carousel-item{
+    height: 100vh;
+    width: 100%;
+    background-image: url(background_images/fondo_patron.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+  }
+  .spacer1 {
+    width: 100%;
+    height: 100vh;
+    background: #f70000;
+    margin: 0;
+    padding: 0;
+    background-image: url(background_images/degradado.jpg);
+  }
+  .spacer2 {
+    width: 100%;
+    height: 200vh;
+    background: #0010f7;
+    margin: 0;
+    padding: 0;
+    background-image: url(background_images/fondo_marrón.jpg);
+  }
+  #header{
+    width: 100%;
+    height: 150px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+  #header-content{
+    background-color: #ffdca7;
+    opacity: 80%;
+    height: 100px;
+    width: 85%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    box-shadow:  0px 5px 4px rgba(0, 0, 0, 0.438);
+    
+}
+#logo{
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+    margin-left: 30px;
+}
+#options-header{
+    display: flex;
+    align-items: end;
+}
+#boton_login{
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 30px;  
+}
+#hamb{
+    margin-right: 15px;
+}
+.index{
+    display: none;
+}
+
+@media screen AND (min-width:900px) {
+    #header-content{
+        width: 75%;
+    }
+        .index{
+            display: block;
+            font-family: "Asap Condensed", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 23px;
+            margin-right: 20px;
+        }
+        #hamb{
+            display: none;
+        }
+        /* background-color: green; */
+   
+}
+@media screen AND (min-width:1600px) {
+    #header-content{
+        width: 70%;
+        /* background-color: red; */
+    }
+    #logo{
+        margin-left: 50px;
+    }
+    #boton_login{
+        margin-right: 50px;
+    }
+    .index{
+        margin-right: 30px;
+        font-size: 25px;
+    }
+}
+
+
+
 #form_login_inicio_sesion{
     position: fixed;
     left:0;
@@ -74,7 +197,12 @@
     color: yellow;
 }
 
-body{
+
+
+
+
+
+/* body{
     height: 100vh;
     display: grid;
     grid-template-columns: 25% 1fr;
@@ -88,17 +216,7 @@ header{
     color: white;
 
 }
-#boton_login{
-    background-color: rgb(252, 53, 53);
-    position: absolute;
-    right: 20px;
-    top: 23px;
-    transition:background-color 0.5s ,color 0.5s;
-    text-align: center;
-    border-radius: 8px;
-    height: 20px;
-    width: 55px;
-}
+
 #boton_login:hover{
     background-color: blanchedalmond;
     color: black;
@@ -115,4 +233,4 @@ nav{
 footer{
     grid-area: zf;
     background-color: rgb(0, 0, 0);
-}
+} */
