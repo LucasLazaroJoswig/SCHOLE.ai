@@ -22,7 +22,7 @@
     <div id="form_login_inicio_sesion">
         <div id="div_registro">*Logo*
             <div id="expandir_registro" onclick="fExpandirRegistro()" title="Expandir registro"><</div>
-            <form id="form_registro">
+            <form id="form_registro" method="post">
                 <table>
                     <th colspan="2" class="Titulo_de_Forms">
                         Crear una nueva cuenta
@@ -34,23 +34,23 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="text" id="nombre" name="nombre" placeholder="Deivi Daniel Perdomo"><br><br></td>
+                        <td><input type="text" id="nombre" name="nombre" placeholder="Deivi Daniel Perdomo" required=""><br><br></td>
                     </tr>
                     <tr>
-                        <td><input type="text" id="nombre_usuario" name="nombre" placeholder="deivimpt56"><br><br></td>
+                        <td><input type="text" id="nombre_usuario" name="nombre" placeholder="deivimpt56" required=""><br><br></td>
                     </tr>
                     <tr>
-                        <td><input type="email" id="email_registro" name="email" placeholder="ejemplo@gmail.com"><br><br></td>
+                        <td><input type="email" id="email_registro" name="email" placeholder="ejemplo@gmail.com" required=""><br><br></td>
                     </tr>
                     <tr>
-                        <td><input type="password" id="password_registro" name="password" placeholder="Contraseña"><br><br></td>
+                        <td><input type="password" id="password_registro" name="password" placeholder="Contraseña" required=""><br><br></td>
                     </tr>
                     <tr>
-                        <td><input type="password" id="rpassword_registro" name="rpassword" placeholder="Repita la Contraseña"><br><br></td>
+                        <td><input type="password" id="rpassword_registro" name="rpassword" placeholder="Repita la Contraseña" required=""><br><br></td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="button" value="Registrarse" onclick="fControlRegistrar()">
+                            <input name="enviar" type="submit" onclick="fControlRegistrar()">
                     </tr>
                     <tr>
                         <td>
@@ -133,6 +133,8 @@
 
 
 
-    
+<?php
+include("assets/php/correo.php")  
+?> 
 </body>
 </html>
