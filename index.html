@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScholeAI</title>
+    <link rel="stylesheet" href="assets/estilos/estilos.css">
+    <script src="assets/scripts/scripts.js"></script>
+
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Animaciones de scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- Carga el script platform.js desde la URL proporcionada de Google. 
+            Este script contiene las funciones necesarias para integrar los servicios de Google en la página web -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Especifica el ID del cliente necesario para la autenticación de Google. El contenido del atributo content es 
+            el ID del cliente asociado con la aplicación web en la consola de desarrolladores de Google. Este ID se 
+            utiliza para identificar la aplicación cuando se realiza la autenticación con Google. -->
+    <meta name="google-signin-client_id"
+        content="76666712146-7s9nc15pikb8fikrb7h2ihejbibdb96j.apps.googleusercontent.com">
+
+</head>
+
+<body onload="fInicio()">
+    <div class="carousel-inner">
+
+        <div class="carousel-item">
+            <div id="header">
+                <div id="header-content">
+                    <div id="logo">SCHOLE.AI</div>
+                    <div id="pages"></div>
+                    <div id="options-header">
+                        <div class="index">
+                            Más info
+                        </div>
+                        <div class="index">
+                            Comó utilizar
+                        </div>
+                        <div class="index">
+                            Quién somos
+                        </div>
+                        <div id="hamb">
+                            <svg width="28" height="16" viewBox="0 0 22 9" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0L10.7039 8.89972L21.4077 0H0Z" fill="#42270D" />
+                            </svg>
+                        </div>
+                        <div id="boton_login" onclick="fAbrirModalLogin()">
+                            LOGIN
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="spacer1">
+        <!-- <img src="assets/images/degradado.jpg" alt="" class="diapos-100"> -->
+    </div>
+    <div class="spacer2">
+        <!-- <img src="assets/images/fondo_marrón.jpg" alt="" class="diapos-200"> -->
+    </div>
+
+
+    <div id="form_login_inicio_sesion">
+        <div id="div_registro">
+            <!-- *Logo* -->
+            <img src="assets/images/Back_To.png" id="expandir_registro" onclick="fExpandirRegistro()" alt="Expandir registro">
+            <form id="form_registro" method="post">
+                <div class="Titulo_de_Forms" colspan="2">
+                    Registro
+                </div>
+                <div>
+                    &nbsp;
+                </div>
+                <div>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required=""><br><br>
+                </div>
+                <div>
+                    <input type="text" id="nombre_usuario" name="Nombre de usuario" placeholder="Nombre de usuario" required=""><br><br>
+                </div>
+                <div>
+                    <input type="email" id="email_registro" name="email" placeholder="Correo"
+                        required=""><br><br>
+                </div>
+                <div>
+                    <input type="password" id="password_registro" name="password" placeholder="Contraseña"
+                        required=""><br><br>
+                </div>
+                <div>
+                    <input type="password" id="rpassword_registro" name="rpassword" placeholder="Repita la Contraseña"
+                        required=""><br><br>
+                </div>
+                <div>
+                    <input name="enviar" type="submit" onclick="fControlRegistrar()">
+                </div>
+                <div id="rdiv_error">&nbsp;</div>
+                <div id="tengo_cuenta" onclick="fExpandirRegistro()">Tengo una cuenta</div>
+
+                <div class="linia_or" style="display: flex; align-items: center;">
+                    <hr style="flex: 1; border: 0; border-top: 2px solid white;">
+                    <span style="margin: 0 10px; color: white;">OR</span>
+                    <hr style="flex: 1; border: 0; border-top: 2px solid white;">
+                </div>
+
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <a href="#" onclick="signOut();">Sign out</a>
+            </form>
+        </div>
+
+        <div id="div_iniciar_sesion">
+            <img src="assets/images/Next_page.png" id="expandir_login" onclick="fExpandirLogin()" alt="Expandir login">
+            <form id="form_login">
+                <div class="Titulo_de_Forms">
+                    Inicio sesion
+                </div>
+                <div>
+                    &nbsp;
+                </div>
+                <div>
+                    <input type="email" id="email_login" name="email" placeholder="Correo"><br><br>
+                </div>
+                <div>
+                    <input type="password" id="password_login" name="password" placeholder="Contraseña">
+                </div>
+                <div class="td_login">
+                    <input type="submit" id="btn-login" value="Iniciar sesión">
+                </div>
+                <div id="div_error">&nbsp;</div>
+
+                <div class="linia_or" style="display: flex; align-items: center;">
+                    <hr style="flex: 1; border: 0; border-top: 2px solid black;">
+                    <span style="margin: 0 10px; color: black;">OR</span>
+                    <hr style="flex: 1; border: 0; border-top: 2px solid black;">
+                </div>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                
+            </form>
+        </div>
+        <img src="assets/images/Home.png" id="home" alt="Home"onclick="fCerrarLogin()">
+    </div>
+
+
+
+
+    <!-- <?php
+include("assets/php/correo.php")  
+?>  -->
+
+</body>
+
+</html>
