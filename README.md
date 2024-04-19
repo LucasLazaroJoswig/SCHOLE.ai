@@ -34,8 +34,8 @@ Proyecto desarrollado para la Hackathon del Dev y para la asignatura de Lenguaje
 [![Contribuidores](https://contrib.rocks/image?repo=LucasLazaroJoswig/SCHOLE.ai)](https://github.com/LucasLazaroJoswig/SCHOLE.ai/graphs/contributors)
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/LucasLazaroJoswig/SCHOLE.ai.svg?style=for-the-badge&color=orange
+[contributors-shield]: https://img.shields.io/github/contributors/LucasLazaroJoswig/SCHOLE.ai?style=for-the-badge&color=orange
 [contributors-url]: https://github.com/LucasLazaroJoswig/SCHOLE.ai/graphs/contributors
-[stars-shield]: https://img.shields.io/github/stars/LucasLazaroJoswig/SCHOLE.ai.svg?style=for-the-badge&color=yellow
+[stars-shield]: https://img.shields.io/github/stars/LucasLazaroJoswig/SCHOLE.ai?style=for-the-badge&color=yellow
 [stars-url]: https://github.com/LucasLazaroJoswig/SCHOLE.ai/stargazers
 [views-count]:(https://komarev.com/ghpvc/?username=monge116&color=green)
