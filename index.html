@@ -30,20 +30,22 @@
 <body onload="fInicio()">
     <div class="carousel-inner">
 
-        <div class="carousel-item">
+        <div id="carousel-item" class="section">
             <div id="header">
                 <div id="header-content">
-                    <div id="logo">SCHOLE.AI</div>
+                    <div id="logo">
+                        <a href="#logo">SCHOLE.AI</a>
+                    </div>
                     <div id="pages"></div>
                     <div id="options-header">
                         <div class="index">
-                            Más info
+                            <a href="#info" class="active">Más info
+                            </div></a> 
+                        <div class="index">
+                            <a href="#util">Comó utilizar</a> 
                         </div>
                         <div class="index">
-                            Comó utilizar
-                        </div>
-                        <div class="index">
-                            Quién somos
+                            <a href="#somos">Quién somos</a>
                         </div>
                         <div id="hamb">
                             <svg width="28" height="16" viewBox="0 0 22 9" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,15 +58,19 @@
                     </div>
                 </div>
             </div>
-
+            <div class="section" id="logo"></div>
         </div>
     </div>
-    <div class="spacer1">
+    <div id="spacer1" class="section">
+        <div class=".section" id="info"></div>
         <!-- <img src="assets/images/degradado.jpg" alt="" class="diapos-100"> -->
     </div>
-    <div class="spacer2">
+    <div id="spacer2" class="section">
+        <div class=".section" id="util"></div>
+        
         <!-- <img src="assets/images/fondo_marrón.jpg" alt="" class="diapos-200"> -->
     </div>
+    <div class=".section" id="somos"></div>
 
 
     <div id="form_login_inicio_sesion">

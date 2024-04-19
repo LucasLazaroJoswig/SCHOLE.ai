@@ -1,7 +1,26 @@
+let sections = document.querySelectorAll('.section')
+let navLinks = document.querySelectorAll('div a')
+
+window.onscroll = () => {
+  sections.forEach(sec => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute('id');
+
+    if(to >= offset && top < offset + height){
+      navLinks.forEach(links => {
+        links.classList.remove('active');
+        document.querySelector('div a[href*=' + id + ']').classList.add('active');
+      });
+    }
+  })
+}
+
 function fInicio(){
 	// -----------------------Script para el scroll-------------------------
 	// const panels = gsap.utils.toArray(".carousel-item");
-	const items = gsap.utils.toArray(".carousel-item");
+	const items = gsap.utils.toArray("#carousel-item");
 	// const controls = document.querySelectorAll(".carousel-navigation li");
 	// controls.forEach((item, i) => {
 	//   item.addEventListener("click", () => {
@@ -51,11 +70,7 @@ function fInicio(){
 	//   }
 	// });
 	//----------------------------------------------------------------
-	
-
 }
-
-
 
 
 function fAbrirModalLogin() {
