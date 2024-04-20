@@ -161,6 +161,29 @@
 .section{
     height: 100vh;
 }
+#spacer2{
+    position: relative;
+    background-color: green;
+}
+#img1{
+    position: absolute;
+    z-index: 10;
+    bottom: 250px;
+    left: 0;
+}
+#img2{
+    position: absolute;
+    z-index: 20;
+    bottom: 20px;
+    right: 0px;
+}
+#img3{
+    position: absolute;
+    z-index: 30;
+    bottom: 0px;
+    left: 0;
+}
+
 
 
 @media screen AND (min-width:900px) {

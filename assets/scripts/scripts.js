@@ -104,7 +104,6 @@ function fMostrarOptionsHeader() {
   document.querySelector("#hamb").style.display="none"
   document.querySelector("#hamb2").style.display="block"
   
-  
 
 }
 function fOcultarOptionsHeader() {
