@@ -47,7 +47,8 @@
     flex-wrap: wrap;
     align-items: end;
     justify-content: center;
-    padding-bottom: 20px;
+    
+    /* padding-bottom: 20px; */
   }
   #header-content{
     background-color: #ffdca7;
@@ -61,7 +62,8 @@
     /* padding-left: 20px;
     padding-right: 20px; */
     box-shadow:  0px 5px 4px rgba(0, 0, 0, 0.438);
-    
+    position: relative;
+    z-index: 20;
 }
 #logo{
     font-family: "Asap Condensed", sans-serif;
@@ -91,8 +93,70 @@
 #hamb{
     margin-right: 15px;
 }
+#hamb2{
+    display: none;
+    margin-right: 15px;
+}
+#hamb path, #hamb2 path {
+    transition: .3s;
+}
+ 
+#hamb path:hover {
+    fill:orange
+}
+#hamb2 path:hover {
+    fill:orange
+}
+#extension{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: center;
+    transition: .3s;
+    transition: 0.3s;
+}
+#hamb-options-header{
+    background-color: #B29569;
+    display: flex;
+    z-index: 10;
+    opacity: 80%;
+    height: 50px;
+    width: 85%;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-around;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s, transform 0.5s;  
+}
+#hamb-options-header.mostrar{
+    display: flex;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
 .index{
     display: none;
+}
+.index2 {
+    display: block;
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 23px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.index2 a{
+    text-decoration: none;
+    transition: .3s;
+    color: black;
+}
+.index2 a:hover {
+    color: orange;
 }
 .section{
     height: 100vh;
@@ -100,10 +164,15 @@
 
 
 @media screen AND (min-width:900px) {
-    #header-content{
-        width: 75%;
-    }
-        .index{
+    #header-content {
+            width: 75%;
+        }
+    
+        #hamb-options-header{
+            display: none;
+        }
+    
+        .index {
             display: block;
             font-family: "Asap Condensed", sans-serif;
             font-weight: 500;
@@ -111,21 +180,28 @@
             font-size: 23px;
             margin-right: 20px;
             cursor: pointer;
-            
+    
         }
-        .index a{
+    
+        .index a {
             text-decoration: none;
             transition: .3s;
             color: black;
         }
-        .index a:hover{
+    
+        .index a:hover {
             color: orange;
         }
-        #hamb{
+    
+        #hamb svg, #hamb2 svg {
             display: none;
         }
+
+        #extension{
+            display: none;
+        }
+    
         /* background-color: green; */
-   
 }
 @media screen AND (min-width:1600px) {
     #header-content{
