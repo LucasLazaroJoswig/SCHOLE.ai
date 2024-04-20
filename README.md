@@ -22,7 +22,7 @@ Proyecto desarrollado para la Hackathon del Dev y para la asignatura de Lenguaje
 - **Especialización en materias**: Aprende sobre cualquier tema que quieras.
 - **Generador de examenes**: Evalua tus conocimientos con examenes basados en tus apuntes.
 
-### Capturas de pantalla de la web de La Velada IV
+### Capturas de pantalla de la web
 
 ![halo (1)](https://github.com/LucasLazaroJoswig/SCHOLE.ai/assets/145221541/831f30fe-cf1f-4928-928e-d97b632564e0)
 
