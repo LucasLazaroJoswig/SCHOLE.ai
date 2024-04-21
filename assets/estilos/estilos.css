@@ -30,6 +30,8 @@
     margin: 0;
     padding: 0;
     background-image: url(background_images/degradado.jpg);
+    z-index: 30;
+    position: relative;
   }
   #spacer2 {
     width: 100%;
@@ -164,6 +166,18 @@
 #spacer2{
     position: relative;
     background-color: green;
+}
+#sol-container{
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+
+}
+#sol{
+    position: absolute;
+    z-index: 10;
+    bottom: 1000px;
+   
 }
 #img1{
     position: absolute;

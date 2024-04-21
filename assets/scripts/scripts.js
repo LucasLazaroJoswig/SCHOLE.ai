@@ -44,7 +44,63 @@ window.onscroll = () => {
   })
 }
 
+
+
+
 function fInicio(){
+  gsap.to("#sol",{
+    scrollTrigger:{
+      trigger:"#sol",
+      // start:"top center",
+      // end:"top 100px",
+      scrub: 1,
+      
+      toggleActions:"reverse pause reverse none"
+      
+    },
+    y: 300,
+    duration:3
+  });
+  gsap.to("#img1",{
+    scrollTrigger:{
+      trigger:"#img1",
+      // start:"top center",
+      // end:"top 100px",
+      scrub: 1,
+      
+      toggleActions:"reverse pause reverse none"
+      
+    },
+    y: -120,
+    duration:1
+  });
+  gsap.to("#img2",{
+    scrollTrigger:{
+      trigger:"#img2",
+      // start:"top center",
+      // end:"top 100px",
+      scrub: 1,
+      
+      toggleActions:"reverse pause reverse none"
+      
+    },
+    y: -70,
+    duration:2
+  });
+  gsap.to("#img3",{
+    scrollTrigger:{
+      trigger:"#img3",
+      // start:"top center",
+      // end:"top 100px",
+      scrub: 1,
+    
+      toggleActions:"reverse pause reverse none"
+      
+    },
+    y: -50,
+    duration:3
+  });
+
 	// -----------------------Script para el scroll-------------------------
 	// const panels = gsap.utils.toArray(".carousel-item");
 	const items = gsap.utils.toArray("#carousel-item");
@@ -84,6 +140,8 @@ function fInicio(){
 		});
 	  }
 	});
+
+  
 	
 	// const tlfour = gsap.timeline({
 	//   scrollTrigger: {
