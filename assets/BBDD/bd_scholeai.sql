@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-04-2024 a las 23:46:11
+-- Tiempo de generación: 20-04-2024 a las 01:15:27
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -24,47 +24,94 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `conversaciones`
+--
+
+CREATE TABLE conversaciones (
+  conv_id int(11) NOT NULL,
+  conv_usu_id int(10) NOT NULL,
+  conv_id_herramienta varchar(10) NOT NULL,
+  conv_archivo varchar(40),
+  conv_contenido text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `herramientas`
+--
+
+CREATE TABLE herramientas (
+  herr_id varchar(10) NOT NULL,
+  herr_nombre varchar(35) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE `usuarios` (
-  `usu_id` int(11) NOT NULL,
-  `nombre` varchar(255) NOT NULL,
-  `contraseña` varchar(255) NOT NULL,
-  `usu_foto` varchar(255) DEFAULT NULL,
-  `correo` varchar(255) NOT NULL,
-  `estilo` tinyint(4) DEFAULT 0,
-  `nombre_usuario` varchar(45) DEFAULT NULL
+CREATE TABLE usuarios (
+  usu_id int(11) NOT NULL,
+  usu_alias varchar(30) NOT NULL,
+  usu_nombre varchar(30),
+  usu_email varchar(50) NOT NULL,
+  usu_password varchar(40) NOT NULL,
+  eleccion_tema int(2) DEFAULT 0,
+  foto_perfil varchar(35)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`usu_id`, `nombre`, `contraseña`, `usu_foto`, `correo`, `estilo`, `nombre_usuario`) VALUES
-(1, 'Deivi Perdomo', 'deivi', NULL, 'deivi@gmail.com', 0, 'deivipppp'),
-(2, 'awervaerv', '8cd01f476df0d8c3e4620336e98dea8e', 'sdc', 'awecaervaerv', 0, 'aervaerv'),
-(3, 'sdcav', 'e3ad16a259aca18d103d090dcbef851c', NULL, 'awervarv', 0, 'aewcvarv');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
+-- Indices de la tabla `conversaciones`
+--
+ALTER TABLE conversaciones
+  ADD PRIMARY KEY (conv_id),
+  ADD KEY r_usu_id (conv_usu_id),
+  ADD KEY r_herr_id (conv_id_herramienta);
+
+--
+-- Indices de la tabla `herramientas`
+--
+ALTER TABLE herramientas
+  ADD PRIMARY KEY (herr_id);
+
+--
 -- Indices de la tabla `usuarios`
 --
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`usu_id`);
+ALTER TABLE usuarios
+  ADD PRIMARY KEY (usu_id);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
+-- AUTO_INCREMENT de la tabla `conversaciones`
+--
+ALTER TABLE conversaciones
+  MODIFY conv_id int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
-ALTER TABLE `usuarios`
-  MODIFY `usu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE usuarios
+  MODIFY usu_id int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `conversaciones`
+--
+ALTER TABLE conversaciones
+  ADD CONSTRAINT r_herr_id FOREIGN KEY (conv_id_herramienta) REFERENCES herramientas (herr_id),
+  ADD CONSTRAINT r_usu_id FOREIGN KEY (conv_usu_id) REFERENCES usuarios (usu_id);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
