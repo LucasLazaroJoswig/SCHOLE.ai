@@ -7,8 +7,6 @@
 a {
     text-decoration: none;
     color: inherit;
-    height: 0 auto;
-    width:  0 auto;
 }
 body{
     height: 100vh;
@@ -47,7 +45,7 @@ section{
     justify-content: center;
     background-color: #f3bf996c;
 }
-#div_cont_herramientas{
+#div_cont{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -57,34 +55,3 @@ section{
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
-#tit_div_cont_herramientas{
-    font-weight: bold;
-    font-size: 22px;
-    width: 100%;
-    margin: 15px 0 15px 25px;
-}
-#her_profesor_particular,#her_generador_apuntes{
-    background-color: #FFEDDC;
-    font-weight: bold;
-    font-size: 18px;
-    height: 350px;
-    width: 260px;
-    margin: 5px 20px 30px 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.2s ease,scale 0.2s; 
-}
-.tit_heramienta{
-    width: 100%;
-    text-align: center;
-    margin: 60px 0 0 0;
-}
-.foto_herramienta{
-    margin: 60px;
-}
-#her_profesor_particular:hover,#her_generador_apuntes:hover{
-    cursor: pointer;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
-    scale: 1.0105;
-}
-
