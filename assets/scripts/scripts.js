@@ -99,7 +99,23 @@ function fInicio(){
     },
     y: -50,
     duration:3
+
+    
   });
+  gsap.to("#cards-tittle",{
+    scrollTrigger:{
+      trigger:"#cards-tittle",
+      // start:"top center",
+      // end:"top 100px",
+      scrub: 1,
+      
+      toggleActions:"reverse pause reverse none"
+      
+    },
+    y: 10,
+    duration:3
+  });
+
 
 	// -----------------------Script para el scroll-------------------------
 	// const panels = gsap.utils.toArray(".carousel-item");

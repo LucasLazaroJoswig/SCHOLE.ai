@@ -253,11 +253,64 @@
 #iniciosesion-container:hover{
     background-color: #e0bfa6;
 }
-
+#cards-container{
+    position: absolute;
+    top: 0px;
+    width: 40%;
+    height: 100vh;
+    z-index: 40;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 180px;
+    height: 220px;
+    background-color: #4B2B10;
+    border-radius: 30px;
+    border: 7px solid #6A401D;
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 20px;
+    color: #FFDCA7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+    box-shadow: 0px 6px 10px 0px rgba(235,139,95,1);
+    transition: all ease .3s;
+}
+#cards-tittle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#cards-tittle > img{
+    position: absolute;
+    z-index: -10;
+    width: 200px;
+}
 #spacer2{
     position: relative;
-    /* background-color: green; */
+    background-color: blue;
+    
 }
+#util{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
 #sol-container{
     display: flex;
     justify-content: center;
@@ -288,6 +341,7 @@
     bottom: 0px;
     left: 0;
 }
+
 
 
 
@@ -402,6 +456,26 @@
             transition: .5s;
         }
         /* background-color: green; */
+        
+        #cards-container{
+            flex-wrap: nowrap;
+            width: 75%;
+            justify-content: space-between;
+            /* background-color: green; */
+        }
+        #cards-tittle{
+            position: absolute;
+            top: 50px;
+            font-size: 35px;
+        }
+        #cards-tittle > img{
+            width: 250px;
+        }
+        .card{
+            width: 200px;
+            height: 250px;
+            margin: 10px;
+        }
 }
 @media screen AND (min-width:1600px) {
     #header-content{
@@ -485,6 +559,25 @@
         cursor: pointer;
         transition: .5s;
     }
+    .card{
+        height: 400px;
+        width: 250px;
+        font-size: 30px;
+    }
+    #cards-container{
+        flex-wrap: nowrap;
+        width: 70%;
+        justify-content: space-around;
+        /* background-color: green; */
+    }
+    #cards-tittle{
+        font-size: 50px;
+        top: 40px;
+    }
+    #cards-tittle > img{
+        width: 340px;
+        
+}
 }
 
 
