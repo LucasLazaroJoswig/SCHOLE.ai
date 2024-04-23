@@ -84,8 +84,9 @@
 .index{
     display: none;
 }
-
+/* ---------------------------- Responsive ---------------------------- */
 @media screen AND (min-width:900px) {
+
     #header-content{
         width: 75%;
     }
@@ -142,12 +143,15 @@
     background-color: rgb(145, 110, 3);
     color: white;
     height: 100vh;
-    width: 200px;
+    width: 0px;
     transition: all 0.5s;
 }
 #div_iniciar_sesion{
     flex-grow: 1;
-    background-color: rgb(184, 184, 184);
+    background-image: url('background_images/fond_gris_login.png');
+    background-color:   rgb(145, 110, 3) ;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
     height:  100vh;
     width: 100vh;
@@ -170,12 +174,12 @@
     display: none;
     position: absolute;
     top: 20px;
-    right: 170px;
-    transition: all 1s;
+    right: 220px;
+    transition: all 1.5s;
 }
 #expandir_login{
     position: absolute;
-    left: 170px;
+    left: 220px;
     top: 20px;
 }
 #form_registro{
@@ -183,9 +187,6 @@
 }
 #form_registro,#form_login{
     text-align: center;
-}
-#iniciar_sesion_google:hover{
-    color: yellow;
 }
 .Titulo_de_Forms {
     font-size: 49px;
@@ -262,3 +263,6 @@ input:focus {
     margin-bottom: 20px;
 }
 /* -------------------------------------------------------------------------------------------------- */
+
+
+

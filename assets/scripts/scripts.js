@@ -68,7 +68,7 @@ function fExpandirLogin() {
     document.querySelector("#expandir_login").style.display = "none";
     document.querySelector("#div_registro").style.flexGrow = 1;
     document.querySelector("#div_iniciar_sesion").style.flexGrow = 0;
-    document.querySelector("#div_iniciar_sesion").style.width = 150 + "px";
+    document.querySelector("#div_iniciar_sesion").style.width = 300 + "px";
     document.querySelector("#form_registro").style.display = "block";
     document.querySelector("#form_login").style.display = "none";
     setTimeout(function () {
@@ -79,7 +79,7 @@ function fExpandirRegistro() {
     document.querySelector("#div_registro").style.flexGrow = 0;
     document.querySelector("#div_iniciar_sesion").style.flexGrow = 1;
     document.querySelector("#expandir_registro").style.display = " none";
-    document.querySelector("#div_registro").style.width = 150 + "px";
+    document.querySelector("#div_registro").style.width = 0 + "px";
     document.querySelector("#div_iniciar_sesion").style.width = 100 + "vh";
     document.querySelector("#form_registro").style.display = "none";
     document.querySelector("#form_login").style.display = "block";
