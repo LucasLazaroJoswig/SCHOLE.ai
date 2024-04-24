@@ -1,7 +1,125 @@
+let sections = document.querySelectorAll('.section')
+let navLinks = document.querySelectorAll('div a')
+
+
+// window.addEventListener('resize', function(){
+
+//   let anchoLimite = 900;
+//   let hoh = document.querySelector('#hamb-options-header');
+//   let hamb = document.querySelector('#hamb');
+//   let hamb2 = document.querySelector('#hamb2');
+//   console.log(window.innerWidth)
+//   if (window.innerWidth > anchoLimite) {
+//     window.reload
+// } else {
+//     hoh.style.display = 'flex';
+//     hamb2.style.display='none';
+//     hamb.style.display='flex';
+//     if(hamb2.style.display='flex'){
+      
+//     }
+// }
+// if(window.innerWidth = anchoLimite){
+  
+// }
+// if(window.innerWidth > anchoLimite){
+//   hamb.style.display='flex';
+// }
+
+// })
+
+window.onscroll = () => {
+  sections.forEach(sec => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute('id');
+
+    if(to >= offset && top < offset + height){
+      navLinks.forEach(links => {
+        links.classList.remove('active');
+        document.querySelector('div a[href*=' + id + ']').classList.add('active');
+      });
+    }
+  })
+}
+
+
+
+
 function fInicio(){
+  gsap.to("#sol",{
+    scrollTrigger:{
+      trigger:"#sol",
+      // start:"top center",
+      // end:"top 100px",
+      scrub: 1,
+      
+      toggleActions:"reverse pause reverse none"
+      
+    },
+    y: 300,
+    duration:3
+  });
+  gsap.to("#img1",{
+    scrollTrigger:{
+      trigger:"#img1",
+      // start:"top center",
+      // end:"top 100px",
+      scrub: 1,
+      
+      toggleActions:"reverse pause reverse none"
+      
+    },
+    y: -120,
+    duration:1
+  });
+  gsap.to("#img2",{
+    scrollTrigger:{
+      trigger:"#img2",
+      // start:"top center",
+      // end:"top 100px",
+      scrub: 1,
+      
+      toggleActions:"reverse pause reverse none"
+      
+    },
+    y: -70,
+    duration:2
+  });
+  gsap.to("#img3",{
+    scrollTrigger:{
+      trigger:"#img3",
+      // start:"top center",
+      // end:"top 100px",
+      scrub: 1,
+    
+      toggleActions:"reverse pause reverse none"
+      
+    },
+    y: -50,
+    duration:3
+
+    
+  });
+  gsap.to("#cards-tittle",{
+    scrollTrigger:{
+      trigger:"#cards-tittle",
+      // start:"top center",
+      // end:"top 100px",
+      scrub: 1,
+      
+      toggleActions:"reverse pause reverse none"
+      
+    },
+    y: 10,
+    duration:3
+  });
+
+
 	// -----------------------Script para el scroll-------------------------
 	// const panels = gsap.utils.toArray(".carousel-item");
-	const items = gsap.utils.toArray(".carousel-item");
+	const items = gsap.utils.toArray("#carousel-item");
 	// const controls = document.querySelectorAll(".carousel-navigation li");
 	// controls.forEach((item, i) => {
 	//   item.addEventListener("click", () => {
@@ -38,6 +156,8 @@ function fInicio(){
 		});
 	  }
 	});
+
+  
 	
 	// const tlfour = gsap.timeline({
 	//   scrollTrigger: {
@@ -51,10 +171,21 @@ function fInicio(){
 	//   }
 	// });
 	//----------------------------------------------------------------
-	
+}
+function fMostrarOptionsHeader() {
+  document.getElementById('hamb-options-header').classList.add('mostrar');
+  // document.querySelector("#hamb-options-header").style.display="flex"
+  document.querySelector("#hamb").style.display="none"
+  document.querySelector("#hamb2").style.display="block"
+  
 
 }
-
+function fOcultarOptionsHeader() {
+  // document.querySelector("#hamb-options-header").style.display="none"
+  document.querySelector("#hamb").style.display="block"
+  document.querySelector("#hamb2").style.display="none"
+  document.getElementById('hamb-options-header').classList.remove('mostrar');
+}
 
 
 

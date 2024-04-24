@@ -33,42 +33,109 @@
 <body onload="fInicio()">
     <div class="carousel-inner">
 
-        <div class="carousel-item">
+        <div id="carousel-item" class="section">
             <div id="header">
                 <div id="header-content">
-                    <div id="logo">SCHOLE.AI</div>
+                    <div id="logo">
+                        <a>SCHOLE.AI</a>
+                    </div>
                     <div id="pages"></div>
                     <div id="options-header">
                         <div class="index">
-                            Más info
+                            <a href="#info">Más info
+                        </div></a> 
+                        <div class="index">
+                            <a href="#util">Comó utilizar</a> 
                         </div>
                         <div class="index">
-                            Comó utilizar
+                            <a href="#somos">Quién somos</a>
                         </div>
-                        <div class="index">
-                            Quién somos
-                        </div>
-                        <div id="hamb">
-                            <svg width="28" height="16" viewBox="0 0 22 9" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 0L10.7039 8.89972L21.4077 0H0Z" fill="#42270D" />
+                        <div id="hamb" onclick="fMostrarOptionsHeader()">
+                            <svg width="28" height="16" viewBox="0 0 22 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0L10.7039 8.89972L21.4077 0H0Z" fill="#42270D"/>
                             </svg>
                         </div>
+                        <div id="hamb2" onclick="fOcultarOptionsHeader()">
+                            <svg width="28" height="16" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.4077 11.2036L10.7039 -0.00024128L5.72205e-06 11.2036H21.4077Z" fill="#42270D"/>
+                                </svg>
+                                
+                        </div>
+
+                        
                         <div id="boton_login" onclick="fAbrirModalLogin()">
                             LOGIN
                         </div>
                     </div>
                 </div>
+                
             </div>
+            <div id="extension">
+                <div id="hamb-options-header">
+                    <div class="index2">
+                        <a href="#info">Más info</a>
+                    </div>
+                    <div class="index2">
+                        <a href="#util">Comó utilizar</a>
+                    </div>
+                    <div class="index2">
+                        <a href="#somos">Quién somos</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section" >
+                <div id="content-section">
+                    <div>
+                        <div id="text-container">
+                            <div>
+                                <p>Schole es una herramienta IA</p>
+                                <p id="subrayado">que te ayuda</p>
+                                <p>en tu aprendizaje de materias</p>
+                            </div>
+                            
+                        </div>
+                        <div id="video-container" >
+                        <video src="assets/videos/example.mp4" autoplay muted controls loop></video>
+                        </div>
+                        <div id="iniciosesion-container">INCIO SESIÓN</div>
+                    </div>
+                </div>
 
+            </div>
         </div>
     </div>
-    <div class="spacer1">
+    <div id="spacer1" class="section">
+        <div class="section" id="info"></div>
         <!-- <img src="assets/images/degradado.jpg" alt="" class="diapos-100"> -->
     </div>
-    <div class="spacer2">
+    <div id="spacer2" class="section">
+        <div class="section" id="util">
+            <div id="cards-container">
+                <div id="cards-tittle">
+                    Cómo utilizar
+                    <img src="assets/images/Group.png" alt="">
+                </div>
+                <div class="card">1. Registro</div>
+                <div class="card">2. Pregunta sobre tu temario</div>
+                <div class="card">3. Aprende junto a Schole.ai</div>
+            </div>
+        </div>
+        <div id="sol-container">
+            <img id="sol" src="assets/images/Group 59495.png" alt="">
+        </div>
+        
+        <img id="img1" src="assets/images/mountain-img1.png" alt="">
+        <img id="img2" src="assets/images/mountain-img2.png" alt="">
+        <img id="img3" src="assets/images/mountain-img3.png" alt="">
         <!-- <img src="assets/images/fondo_marrón.jpg" alt="" class="diapos-200"> -->
     </div>
+    <div class=".section" id="somos">
+       
+    </div>
+    
+    
+
 
 
     <div id="form_login_inicio_sesion">

@@ -1,8 +1,10 @@
+
 * {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    font-family: "Asap Condensed", sans-serif;
+    /* overflow-x: hidden; */
+    scroll-behavior: smooth !important; 
+    
   }
   
   ::-webkit-scrollbar {
@@ -10,8 +12,10 @@
   }
   .carousel-inner{
     width: 100%;
+    scroll-behavior: smooth;
+    
   }
-  .carousel-item{
+  #carousel-item{
     height: 100vh;
     width: 100%;
     background-image: url(background_images/fondo_patron.jpg);
@@ -19,15 +23,17 @@
     background-position: right;
     background-size: cover;
   }
-  .spacer1 {
+  #spacer1 {
     width: 100%;
     height: 100vh;
     background: #f70000;
     margin: 0;
     padding: 0;
     background-image: url(background_images/degradado.jpg);
+    z-index: 30;
+    position: relative;
   }
-  .spacer2 {
+  #spacer2 {
     width: 100%;
     height: 200vh;
     background: #0010f7;
@@ -43,7 +49,8 @@
     flex-wrap: wrap;
     align-items: end;
     justify-content: center;
-    padding-bottom: 20px;
+    
+    /* padding-bottom: 20px; */
   }
   #header-content{
     background-color: #ffdca7;
@@ -57,7 +64,8 @@
     /* padding-left: 20px;
     padding-right: 20px; */
     box-shadow:  0px 5px 4px rgba(0, 0, 0, 0.438);
-    
+    position: relative;
+    z-index: 20;
 }
 #logo{
     font-family: "Asap Condensed", sans-serif;
@@ -65,6 +73,12 @@
     font-style: normal;
     font-size: 40px;
     margin-left: 30px;
+    
+}
+#logo a{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
 #options-header{
     display: flex;
@@ -76,33 +90,392 @@
     font-style: normal;
     font-size: 30px;
     cursor: pointer;
-    margin-right: 30px;  
+    margin-right: 30px;
+    transition: .5s; 
+}
+#boton_login:hover{
+    color: orange;
 }
 #hamb{
     margin-right: 15px;
 }
+#hamb2{
+    display: none;
+    margin-right: 15px;
+}
+#hamb path, #hamb2 path {
+    transition: .3s;
+}
+ 
+#hamb path:hover {
+    fill:orange
+}
+#hamb2 path:hover {
+    fill:orange
+}
+#extension{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: center;
+    transition: .3s;
+    transition: 0.3s;
+}
+#hamb-options-header{
+    background-color: #B29569;
+    display: flex;
+    z-index: 10;
+    opacity: 80%;
+    height: 50px;
+    width: 85%;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-around;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s, transform 0.5s;  
+}
+#hamb-options-header.mostrar{
+    display: flex;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
 .index{
     display: none;
 }
-/* ---------------------------- Responsive ---------------------------- */
-@media screen AND (min-width:900px) {
+.index2 {
+    display: block;
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 23px;
+    margin-right: 20px;
+    cursor: pointer;
+}
 
-    #header-content{
-        width: 75%;
-    }
-        .index{
+.index2 a{
+    text-decoration: none;
+    transition: .3s;
+    color: black;
+}
+.index2 a:hover {
+    color: orange;
+}
+.section{
+    height: 100vh;
+}
+#content-section{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    /* background-color: yellow; */
+}
+#content-section > div{
+    width: 80%;
+    height: 40%;
+    /* background-color: green; */
+    margin-top: 100px;
+    position: relative;
+}
+#text-container{
+    position: absolute;
+    top: 0;
+    height: 160px;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255,211,168,1) 0%, rgba(255,179,106,1) 30%, rgba(228,117,30,1) 100%, rgba(218,99,6,1) 100%);
+    border-radius: 40px;
+    box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.45);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+}
+#text-container div{
+   width: 85%;
+   height: 60%;
+   padding-bottom: 25px;
+   /* background-color: green; */
+}
+#subrayado{
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 40px;
+    color: #FFD4AF;
+}
+
+#video-container{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+   
+    width: 80%;
+    height: 60%;
+    border-radius: 40px;
+    box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.45);
+    transition: .5s;
+    
+}
+#video-container video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50px;
+    border: 10px solid #E28123;
+    
+}
+#iniciosesion-container{
+    position: absolute;
+    bottom: 190px;
+    width: 190px;
+    height: 40px;
+    background-color: #FFDABD;
+    border-radius: 30px;
+    box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 25px;
+    cursor: pointer;
+    transition: .5s;
+}
+#iniciosesion-container:hover{
+    background-color: #e0bfa6;
+}
+#cards-container{
+    position: absolute;
+    top: 0px;
+    width: 40%;
+    height: 100vh;
+    z-index: 40;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 180px;
+    height: 220px;
+    background-color: #4B2B10;
+    border-radius: 30px;
+    border: 7px solid #6A401D;
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 20px;
+    color: #FFDCA7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 5px;
+    text-align: center;
+    box-shadow: 0px 6px 10px 0px rgba(235,139,95,1);
+    transition: all ease .3s;
+}
+#cards-tittle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#cards-tittle > img{
+    position: absolute;
+    z-index: -10;
+    width: 200px;
+}
+#spacer2{
+    position: relative;
+    background-color: blue;
+    
+}
+#util{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+#sol-container{
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+
+}
+#sol{
+    position: absolute;
+    z-index: 10;
+    bottom: 1000px;
+   
+}
+#img1{
+    position: absolute;
+    z-index: 10;
+    bottom: 250px;
+    left: 0;
+}
+#img2{
+    position: absolute;
+    z-index: 20;
+    bottom: 20px;
+    right: 0px;
+}
+#img3{
+    position: absolute;
+    z-index: 30;
+    bottom: 0px;
+    left: 0;
+}
+
+
+
+
+@media screen AND (min-width:900px) {
+    #header-content {
+            width: 75%;
+        }
+    
+        #hamb-options-header{
+            display: none;
+        }
+    
+        .index {
             display: block;
             font-family: "Asap Condensed", sans-serif;
             font-weight: 500;
             font-style: normal;
             font-size: 23px;
             margin-right: 20px;
+            cursor: pointer;
+    
         }
-        #hamb{
+    
+        .index a {
+            text-decoration: none;
+            transition: .3s;
+            color: black;
+        }
+    
+        .index a:hover {
+            color: orange;
+        }
+    
+        #hamb svg, #hamb2 svg {
             display: none;
         }
+
+        #extension{
+            display: none;
+        }
+        #content-section{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            /* background-color: yellow; */
+        }
+        #content-section > div{
+            width: 75%;
+            height: 40%;
+            /* background-color: green; */
+            margin-top: 100px;
+            position: relative;
+        }
+        #text-container{
+            position: absolute;
+            top: 100px;
+            height: 160px;
+            width: 50%;
+            background: linear-gradient(180deg, rgba(255,211,168,1) 0%, rgba(255,179,106,1) 30%, rgba(228,117,30,1) 100%, rgba(218,99,6,1) 100%);
+            border-radius: 40px;
+            box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.45);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            font-family: "Asap Condensed", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 25px;
+        }
+        #text-container div{
+           width: 85%;
+           height: 60%;
+           padding-bottom: 15px;
+           /* background-color: green; */
+        }
+        #subrayado{
+            font-family: "Asap Condensed", sans-serif;
+            font-weight: 700;
+            font-style: italic;
+            font-size: 35px;
+            color: #FFD4AF;
+        }
+        #video-container{
+            position: absolute;
+            top: 50px;
+            right: 0;
+            width: 55%;
+            height: 60%;
+            border-radius: 50px;
+            box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.45);
+            
+        }
+        
+        #iniciosesion-container{
+            position: absolute;
+            bottom: 100px;
+            width: 190px;
+            height: 40px;
+            background-color: #FFDABD;
+            border-radius: 30px;
+            box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.45);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Asap Condensed", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 25px;
+            cursor: pointer;
+            transition: .5s;
+        }
         /* background-color: green; */
-   
+        
+        #cards-container{
+            flex-wrap: nowrap;
+            width: 75%;
+            justify-content: space-between;
+            /* background-color: green; */
+        }
+        #cards-tittle{
+            position: absolute;
+            top: 50px;
+            font-size: 35px;
+        }
+        #cards-tittle > img{
+            width: 250px;
+        }
+        .card{
+            width: 200px;
+            height: 250px;
+            margin: 10px;
+        }
 }
 @media screen AND (min-width:1600px) {
     #header-content{
@@ -119,10 +492,96 @@
         margin-right: 30px;
         font-size: 25px;
     }
+    #content-section > div{
+        width: 70%;
+        height: 60%;
+        /* background-color: green; */
+        margin-top: 100px;
+        position: relative;
+    }
+    #text-container{
+        position: absolute;
+        top: 100px;
+        height: 220px;
+        width: 80%;
+        background: linear-gradient(180deg, rgba(255,211,168,1) 0%, rgba(255,179,106,1) 30%, rgba(228,117,30,1) 100%, rgba(218,99,6,1) 100%);
+        border-radius: 40px;
+        box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.45);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        font-family: "Asap Condensed", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 40px;
+    }
+    #text-container div{
+       width: 85%;
+       height: 60%;
+       padding-bottom: 40px;
+       /* background-color: green; */
+    }
+    #subrayado{
+        font-family: "Asap Condensed", sans-serif;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 55px;
+        color: #FFD4AF;
+    }
+    #video-container{
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 45%;
+        height: 60%;
+        border-radius: 50px;
+        box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.45);
+        
+    }
+    
+    #iniciosesion-container{
+        position: absolute;
+        bottom: 200px;
+        left: 80px;
+        width: 300px;
+        height: 70px;
+        background-color: #FFDABD;
+        border-radius: 30px;
+        box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.45);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Asap Condensed", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 35px;
+        cursor: pointer;
+        transition: .5s;
+    }
+    .card{
+        height: 400px;
+        width: 250px;
+        font-size: 30px;
+    }
+    #cards-container{
+        flex-wrap: nowrap;
+        width: 70%;
+        justify-content: space-around;
+        /* background-color: green; */
+    }
+    #cards-tittle{
+        font-size: 50px;
+        top: 40px;
+    }
+    #cards-tittle > img{
+        width: 340px;
+        
+}
 }
 
 
-/*------------------- Modal Inicio de sesion y Registro ------------------- */
+
 #form_login_inicio_sesion{
     position: fixed;
     left:0;
