@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../estilos/profesor_particular.css">
-
+    <link rel="stylesheet" href="../../assets/estilos/ia.css">
     <!-- Fuente -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="../scripts/ia.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
@@ -29,5 +30,32 @@
 
     </section>
     
+
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+              window.voiceflow.chat.load({
+                verify: { projectID: '66267845adc8bb3708aa0f38' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                render: {
+	                mode: 'embedded',
+	                target: document.getElementById('div_cont'),
+                },
+                autostart:true,
+                assistant: {
+                    title: "Diocles",
+                    description: "Tu profe particular de mates",
+                    image:"../../assets/images/Panel_de_herramientas/Robot_math_teacher.png",
+                    // color: "string",
+                    stylesheet: "../../assets/estilos/ia.css" //link to your self-hosted stylesheet
+}
+              });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+      </script>>
+
 </body>
 </html>
