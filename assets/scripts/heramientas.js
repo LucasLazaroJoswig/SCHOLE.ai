@@ -5,3 +5,6 @@ function fRedirectWebProfeParticular() {
 function fRedirectWebGEneradorApuntes() {
     window.location.href = "assets/herramientas/Generador_de_apuntes.html";
 }
+function fRedirectWebDiocles(){
+    window.location.href = "diocles.html";
+}
