@@ -21,12 +21,13 @@
 
     <!-- Carga el script platform.js desde la URL proporcionada de Google. 
             Este script contiene las funciones necesarias para integrar los servicios de Google en la página web -->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <!-- Especifica el ID del cliente necesario para la autenticación de Google. El contenido del atributo content es 
+        <script src="https://accounts.google.com/gsi/client" async defer></script>    <!-- Especifica el ID del cliente necesario para la autenticación de Google. El contenido del atributo content es 
             el ID del cliente asociado con la aplicación web en la consola de desarrolladores de Google. Este ID se 
             utiliza para identificar la aplicación cuando se realiza la autenticación con Google. -->
-    <meta name="google-signin-client_id"
-        content="76666712146-7s9nc15pikb8fikrb7h2ihejbibdb96j.apps.googleusercontent.com">
+            <div id="g_id_onload"
+            data-client_id="76666712146-7s9nc15pikb8fikrb7h2ihejbibdb96j.apps.googleusercontent.com"
+            data-callback="handleCredentialResponse">
+       </div>
 
 </head>
 
@@ -235,7 +236,7 @@
                     <hr style="flex: 1; border: 0; border-top: 2px solid white;">
                 </div>
 
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <div class="g_id_signin" data-type="standard"></div>
                 <a href="#" onclick="signOut();">Sign out</a>
             </form>
         </div>
@@ -265,7 +266,7 @@
                     <span style="margin: 0 10px; color: black;">OR</span>
                     <hr style="flex: 1; border: 0; border-top: 2px solid black;">
                 </div>
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <div class="g_id_signin" data-type="standard"></div>
                 
             </form>
         </div>
