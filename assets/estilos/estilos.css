@@ -11,7 +11,7 @@
     display: none;
   }
 
-  #noti{
+  #noti-correcto{
     display: flex;
     position: fixed;
     bottom: 0px;
@@ -25,7 +25,7 @@
     transform: translateY(0px);
     transition:  opacity 0.3s, transform 0.5s; 
   }
-  #noti>div{
+  #noti-correcto>div{
     display: none;
     background-color:#41270d;
     border: 5px solid green;
@@ -45,7 +45,46 @@
     box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.45);
      
   }
-  #noti.mostrar-noti{
+  #noti-correcto.mostrar-noti{
+    display: flex;
+    opacity: 1;
+    transform: translateY(-40px);
+}
+#noti-incorrecto{
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    height: 70px;
+    width: 100%;
+    opacity: 0;
+    justify-content: center;
+    align-self: center;
+    z-index: 60;
+    opacity: 0;
+    transform: translateY(0px);
+    transition:  opacity 0.3s, transform 0.5s; 
+  }
+  #noti-incorrecto>div{
+    display: none;
+    background-color:#41270d;
+    border: 5px solid red;
+    border-radius: 30px ;
+    padding: 0 10px 0 10px;
+    height: 100%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    /* color: #FFDDA8; */
+    color: red;
+
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.45);
+     
+  }
+  #noti-incorrecto.mostrar-noti{
     display: flex;
     opacity: 1;
     transform: translateY(-40px);

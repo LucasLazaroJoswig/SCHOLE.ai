@@ -31,8 +31,11 @@
 </head>
 
 <body onload="fInicio()">
-    <div id="noti" >
+    <div id="noti-correcto" >
         <div id="noti-content" >Correo enviado correctamente</div>
+    </div>
+    <div id="noti-incorrecto" >
+        <div id="noti-content" >Correo no enviado</div>
     </div>
     <div class="carousel-inner">
         
@@ -148,11 +151,13 @@
                             <div id="submit">
                                 <input type="submit" name="Enviar" onclick="timeout()">
                             </div>
+                            <!-- cambiar esto por scholeai.com -->
                             <input 
                                 type="hidden" 
                                 name="redirect" 
-                                value="https://scholeai.com/index.html"
+                                value="http://192.168.1.132:5500/index.html#somos" 
                                 />
+                                
                             
                         </form>
                     </div>

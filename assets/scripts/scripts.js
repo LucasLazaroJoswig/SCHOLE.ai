@@ -176,13 +176,21 @@ function fInicio(){
 }
 function timeout(){
   setTimeout(fLimpiarInputContactos, 1000)
-
- 
-  document.getElementById('noti').classList.add('mostrar-noti');
-  setTimeout(fQuitarNoti, 3000)
+let correo = document.querySelector("#correo").value
+let mensaje = document.querySelector("#mensaje").value
+  if(correo != "" || mensaje != ""){
+    document.getElementById('noti-correcto').classList.add('mostrar-noti');
+    setTimeout(fQuitarNoti, 3000)
+  }
+  else{
+    console.log("incorrecto")
+    document.getElementById('noti-incorrecto').classList.add('mostrar-noti');
+    setTimeout(fQuitarNoti, 3000)
+  }
 }
 function fQuitarNoti(){
-  document.getElementById('noti').classList.remove('mostrar-noti');
+  document.getElementById('noti-correcto').classList.remove('mostrar-noti');
+  document.getElementById('noti-incorrecto').classList.remove('mostrar-noti');
 }
 function fLimpiarInputContactos(){
   document.getElementById("correo").value="";
