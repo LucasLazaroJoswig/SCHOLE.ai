@@ -48,6 +48,8 @@ window.onscroll = () => {
 
 
 function fInicio(){
+  document.getElementById('noti').classList.remove('mostrar-noti');
+  
   gsap.to("#sol",{
     scrollTrigger:{
       trigger:"#sol",
@@ -172,6 +174,21 @@ function fInicio(){
 	// });
 	//----------------------------------------------------------------
 }
+function timeout(){
+  setTimeout(fLimpiarInputContactos, 1000)
+
+ 
+  document.getElementById('noti').classList.add('mostrar-noti');
+  setTimeout(fQuitarNoti, 3000)
+}
+function fQuitarNoti(){
+  document.getElementById('noti').classList.remove('mostrar-noti');
+}
+function fLimpiarInputContactos(){
+  document.getElementById("correo").value="";
+  document.getElementById("mensaje").value="";
+}
+
 function fMostrarOptionsHeader() {
   document.getElementById('hamb-options-header').classList.add('mostrar');
   // document.querySelector("#hamb-options-header").style.display="flex"
