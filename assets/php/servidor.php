@@ -22,7 +22,7 @@ if (isset($_REQUEST['peticion'])) {
             $usu_email = $_REQUEST['usu_email'];
             $password = $_REQUEST['password'];
             $sql = "INSERT INTO usuarios (usu_id, usu_alias, usu_nombre, usu_email, usu_password, eleccion_tema, foto_perfil, correo_verificado) VALUES 
-                                            (null, '$usu_alias', '$usu_nombre', '$usu_email', '$password', '0', 'foto.png', '0')";
+                                            (null, '$usu_alias', '$usu_nombre', '$usu_email', md5('$password'), '0', 'foto.png', '0')";
             $datos['sql']=$sql;
             $datos['datos'] = BBDD_CTRLR::CRUD($sql, 'i');
             // Devuelvo a JS los datos codificados como JSON
@@ -72,9 +72,20 @@ if (isset($_REQUEST['peticion'])) {
             // }else{ 
             //     echo "<h1>Error al enviar correo</h1>";
             // }
-
-
             break;
+
+        case "ControlLogin":
+            // Recuperar parametros
+            $alias = $_REQUEST['alias'];
+            $password = $_REQUEST['password'];
+            // Preparo el SQL   
+            $sql = "SELECT * FROM usuarios WHERE usu_alias = '$alias' AND usu_password=md5('$password')";
+            $datos['sql']=$sql;
+            // Ejecuto el SQL guardando el resultado
+            $datos['datos'] = BBDD_CTRLR::Consultas($sql);
+            // Devuelvo a JS los datos codificados como JSON
+            echo json_encode($datos);  
+            break; 
 
     }             
 }   
