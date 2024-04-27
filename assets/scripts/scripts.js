@@ -1,6 +1,6 @@
 let sections = document.querySelectorAll('.section')
 let navLinks = document.querySelectorAll('div a')
-
+let usuario_logeado=""
 
 // window.addEventListener('resize', function(){
 
@@ -416,4 +416,9 @@ function fControlLogin() {
         
 
      })
+}
+function fConfiguracion(){
+  document.querySelector("#nombre_usu").innerHTML=usuario_logeado.usu_alias;
+  document.querySelector("#correo_usu").innerHTML=usuario_logeado.usu_email;
+  document.querySelector("#nombre_apellidos").innerHTML=usuario_logeado.usu_nombre;
 }

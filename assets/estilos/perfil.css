@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Asap Condensed", sans-serif;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    height: 0 auto;
+    width:  0 auto;
+}
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: 
+        "zh zh" "zs zs";
+}
+header{
+    grid-area: zh;
+    background-color: #F3BF99;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+#titulo_app{
+    margin: 20px;
+    font-weight: bold;
+}
+#titulo_panel{
+    font-size: 22px;
+    margin-left: 60px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+#foto_perfil{
+    position: absolute;
+    right: 10px;
+    top: 8px;
+}
+#foto_perfil2{
+    width: 30%;
+}
+#foto_perfil1{
+    align-self: center;
+}
+section{
+    grid-area: zs;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3bf996c;
+}
+#div_cont_herramientas{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-color: #F3BF99;
+    height: 711px;
+    width: 895px;
+    border-radius: 10px;
+    
+}
+#tit_div_cont_herramientas{
+    font-weight: bold;
+    font-size: 22px;
+    width: 100%;
+    margin: 15px 0 15px 25px;
+}
+#her_profesor_particular,#her_generador_apuntes{
+    background-color: #FFEDDC;
+    font-weight: bold;
+    font-size: 18px;
+    height: 350px;
+    width: 260px;
+    margin: 5px 20px 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.2s ease,scale 0.2s; 
+}
+.tit_heramienta{
+    width: 100%;
+    text-align: center;
+    margin: 60px 0 0 0;
+}
+.foto_herramienta{
+    margin: 60px;
+}
+#her_profesor_particular:hover,#her_generador_apuntes:hover{
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    scale: 1.0105;
+}
+#usu_foto_y_alias{
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    height: 285px;
+}
+#foto_perfil1{
+    width: 100%;
+    text-align: center;
+
+}
+#nombre_apellidos{
+    width: 100%;
+    text-align: center;
+    font-size: 38px;
+    font-weight: bold;
+}
+#info_basica{
+    padding-top: 35px;
+    width: 831px;
+    height: 30px;
+    text-align: left;
+    font-size: 26px;
+    font-weight:normal;
+}
+#info_usu{
+    display: flex;
+    flex-direction: column;
+    width: 831px;
+    height: 240px;
+    background-color: #FFEDDC;
+    height: auto;
+    gap: 40px;
+    box-shadow: -5px 7 4 0 black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 5px 5px;
+}
+#info_usu>div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 2px black solid;
+}
+
