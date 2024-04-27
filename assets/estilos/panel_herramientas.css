@@ -39,6 +39,23 @@ header{
     position: absolute;
     right: 10px;
     top: 8px;
+    cursor: pointer;
+}
+#opt_perfil{
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    background-color: #AC886E;
+    width: 120px;
+    font-weight: bold;
+    color: #41270D;
+}
+#opt_perfil>div{
+    padding: 3px 7px;
+}
+#opt_perfil>div:hover{
+    background-color: rgba(0, 0, 0, 0.177);
 }
 section{
     grid-area: zs;
