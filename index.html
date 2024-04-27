@@ -7,7 +7,8 @@
     <title>ScholeAI</title>
     <link rel="stylesheet" href="assets/estilos/estilos.css">
     <script src="assets/scripts/scripts.js"></script>
-
+    <link rel="stylesheet" href="assets/estilos/animacionInicial.css">
+    <link rel="icon" href="assets/images/sol.png" type="image/x-icon">
     <!-- Fuente -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,11 +32,17 @@
             el ID del cliente asociado con la aplicación web en la consola de desarrolladores de Google. Este ID se 
             utiliza para identificar la aplicación cuando se realiza la autenticación con Google. -->
     
-       
+            <script src="assets/scripts/animacionInicial.js"></script>
     <div id="g_id_onload"
         data-client_id="76666712146-7s9nc15pikb8fikrb7h2ihejbibdb96j.apps.googleusercontent.com"
         data-ux_mode="redirect"
         data-login_uri="https://www.scholeai.com/panel.html">
+    </div>
+    <div class="intro">
+        <h1 class="logo-intro">
+            <span class="palabraForo">Schole </span><span class="palabraForo"> &nbsp; AI</span>
+            <div class="palabraForo"><img src="assets/images/sol.png" alt=""></div>
+        </h1>
     </div>
     <div class="carousel-inner">
         
@@ -298,19 +305,12 @@
                         required=""><br><br>
                 </div>
                 <div>
-                    <input name="enviar" id="btn-register" type="submit" onclick="fControlRegistrar()">
+                    <button onclick="fControlRegistrar()">Registrar</button>
                 </div>
                 <div id="rdiv_error">&nbsp;</div>
                 <!-- <div id="tengo_cuenta" onclick="fExpandirRegistro()">Tengo una cuenta</div> -->
 
-                <div class="linia_or" style="display: flex; align-items: center;">
-                    <hr style="flex: 1; border: 0; border-top: 2px solid white;">
-                    <span style="margin: 0 10px; color: white;">OR</span>
-                    <hr style="flex: 1; border: 0; border-top: 2px solid white;">
-                </div>
-
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                <a href="#" onclick="signOut();">Sign out</a>
+                
             </form>
         </div>
         </div>
@@ -326,13 +326,13 @@
                     &nbsp;
                 </div>
                 <div>
-                    <input type="text" id="nombre_usuario" name="Nombre de usuario" placeholder="Nombre de usuario" required=""><br><br>
+                    <input type="text" id="nombre_usuario_login" name="Nombre de usuario" placeholder="Nombre de usuario" required=""><br><br>
                 </div>
                 <div>
                     <input type="password" id="password_login" name="password" placeholder="Contraseña">
                 </div>
                 <div class="td_login">
-                    <input type="submit" id="btn-login" value="Continuar" onclick="fControlLogin()">
+                  <button onclick="fControlLogin()">Continuar</button>
                 </div>
                 <div id="div_error">&nbsp;</div>
 

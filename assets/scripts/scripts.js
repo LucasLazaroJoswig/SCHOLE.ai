@@ -1,7 +1,9 @@
 let sections = document.querySelectorAll('.section')
 let navLinks = document.querySelectorAll('div a')
 let usuario_logeado=""
-
+function fRedirectWebPanelLogin(){
+  window.location.href = "panel.html";
+}
 // window.addEventListener('resize', function(){
 
 //   let anchoLimite = 900;
@@ -129,35 +131,7 @@ function fInicio(){
 	//   });
 	// });
 	
-	items.forEach((layer, i) => {
-	  if (i < items.length - 1) {
-		ScrollTrigger.create({
-		  trigger: layer,
-		  duration:1,
-		//pin: true,
-		  start: "top top",
-		//   pinSpacing: false,
-		  snap: 1,
-		//   onEnter: () => controls[i].classList.add("active"),
-		//   onLeave: () => controls[i].classList.remove("active"),
-		//   onEnterBack: () => controls[i].classList.add("active"),
-		//   onLeaveBack: () => controls[i].classList.remove("active")
-		});
-	  } else {
-		ScrollTrigger.create({
-		  trigger: layer,
-		  duration:1,
-		//   pin: true,
-		  start: "top",
-		//   pinSpacing: true,
-		  snap: 1,
-		//   onEnter: () => controls[i].classList.add("active"),
-		//   onLeave: () => controls[i].classList.remove("active"),
-		//   onEnterBack: () => controls[i].classList.add("active"),
-		//   onLeaveBack: () => controls[i].classList.remove("active")
-		});
-	  }
-	});
+
 
   
 	
@@ -368,7 +342,6 @@ function fControlRegistrar() {
                 document.querySelector("#rdiv_error").innerHTML = "Inténtelo más tarde";
                 return;
             }
-            fRedirectWebPanel();
             // // Mostrar un mensaje
             // document.querySelector("#mensaje").innerHTML = "Registro correcto";
             // fMostrar("form_mensaje");
@@ -381,14 +354,14 @@ function fControlRegistrar() {
 
 function fControlLogin() {
     // Leer el alias
-  let alias = document.querySelector("#nombre_usuario").value;
+  let alias = document.querySelector("#nombre_usuario_login").value;
   // Comprobando que el alias no este vacio
  if (alias == ""){
-   document.querySelector("#nombre_usuario").innerHTML = "Escriba su Alias";
+   document.querySelector("#div_error").innerHTML = "Escriba su Alias";
    return;
  }
  // Leer el password
- let password = document.querySelector("#password_login").value;
+ let password = document.querySelector("#password").value;
   // Comprobando que el password no este vacio
  if (password == ""){
    document.querySelector("#div_error").innerHTML = "Escriba la Contraseña";
@@ -403,7 +376,7 @@ function fControlLogin() {
      .then((response) => response.json())
      .then((data) => {
          console.log(data);
-         alert("Se ha logeado")
+        alert()
          // Si es correcto
          if (data.datos.length == 0){
              document.querySelector("#div_error").innerHTML = "Usuario no registrado";
@@ -415,7 +388,7 @@ function fControlLogin() {
          console.log('usuario_logeado: ',usuario_logeado)
      })
      .finally( function(){
-         // fCancelar();
+      fRedirectWebPanelLogin()
         
 
      })
@@ -426,8 +399,8 @@ function fConfiguracion(){
   document.querySelector("#nombre_apellidos").innerHTML=usuario_logeado.usu_nombre;
 }
 function fCambiarContrasena(){
-  let password = document.querySelector("#password_registro").value;
-  let password2 = document.querySelector("#rpassword_registro").value;
+  let password = document.querySelector("#password_change").value;
+  let password2 = document.querySelector("#rpassword_change").value;
   if (password == "") {
       document.querySelector("#rdiv_error").innerHTML = "Escriba su Contraseña";
       return;
@@ -449,4 +422,11 @@ function fCambiarContrasena(){
           }
 
       })
+}
+function fMostrarFormContraseña(){
+  document.querySelector("#modal_contrasena").style.display="flex"
+}
+
+function fCerrarModalContrasena(){
+  document.querySelector("#modal_contrasena").style.display="none"
 }

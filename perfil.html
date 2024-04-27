@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="assets/estilos/perfil.css">
         <script src="assets/scripts/scripts.js"></script>
         <script src="assets/scripts/heramientas.js"></script>
+        <link rel="stylesheet" href="assets/estilos/estilos.css ">
         <!-- Fuente -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,16 +33,33 @@
                 <div>Alias</div>
                 <div id="nombre_usu"></div>
             </div>
-            <div id="correo">
+            <div id="correo_electronico">
                 <div>Correo electrónico</div>
                 <div id="correo_usu"></div>
             </div>
             <div id="Contraseña">
                 <div>Contraseña</div>
-                <div id="contra_usu" onclick="fCambiarContraseña()"><u>Cambiar contraseña</u></div>
+                <div id="contra_usu" onclick="fMostrarFormContraseña()"><u>Cambiar contraseña</u></div>
             </div>
         </div>
         </div>
     </section>
+    <div id="modal_contrasena">
+        <div id="div_cont_contrasena">
+            <div>
+                <input type="password" id="password_change" name="password" placeholder="Nueva Contraseña"
+                    required=""><br><br>
+            </div>
+            <div>
+                <input type="password" id="rpassword_change" name="rpassword" placeholder="Repita la Contraseña"
+                    required=""><br><br>
+            </div>
+            <div>
+                <button onclick="fCambiarContrasena()">Cambiar Contraseña</button>
+            </div>
+            <div id="rdiv_error">&nbsp;</div>
+        </div>
+        <img src="assets/images/Home.png" id="home" alt="Home"onclick="fCerrarModalContrasena()">
+    </div>
 </body>
 </html>

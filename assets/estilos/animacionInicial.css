@@ -1,0 +1,50 @@
+.logo-intro{
+    font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+.intro{
+    position: fixed;
+    z-index: 30;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+}
+.palabraForo{
+    position: relative;
+    display: inline-block;
+    bottom: -20px;
+    opacity: 0;
+}
+.intro>h1{
+    width: 100%;
+    text-align: center;
+}
+h1>div{
+    width: 100%;
+    text-align: center;
+    font-size: 80px;
+}
+.intro img{
+    width: 15%;
+}
+.palabraForo.active{
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+.palabraForo.fade{
+    bottom: 150px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+}
