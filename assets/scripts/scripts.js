@@ -48,7 +48,7 @@ window.onscroll = () => {
 
 
 function fInicio(){
-  document.getElementById('noti').classList.remove('mostrar-noti');
+  // document.getElementById('noti').classList.remove('mostrar-noti');
   
   gsap.to("#sol",{
     scrollTrigger:{
@@ -216,6 +216,11 @@ function fOcultarOptionsHeader() {
 
 function fAbrirModalLogin() {
     document.querySelector("#form_login_inicio_sesion").style.display = "flex";
+    fExpandirRegister();
+}
+function fAbrirModalRegister() {
+  document.querySelector("#form_login_inicio_sesion").style.display = "flex";
+  fExpandirLogin();
 }
 function fCerrarLogin() {
     document.querySelector("#form_login_inicio_sesion").style.display = "none";

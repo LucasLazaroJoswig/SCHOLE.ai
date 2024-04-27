@@ -20,7 +20,7 @@
     opacity: 0;
     justify-content: center;
     align-self: center;
-    z-index: 60;
+    z-index: 50;
     opacity: 0;
     transform: translateY(0px);
     transition:  opacity 0.3s, transform 0.5s; 
@@ -48,7 +48,7 @@
   #noti-correcto.mostrar-noti{
     display: flex;
     opacity: 1;
-    transform: translateY(-40px);
+    transform: translateY(-80px);
 }
 #noti-incorrecto{
     display: flex;
@@ -59,12 +59,13 @@
     opacity: 0;
     justify-content: center;
     align-self: center;
-    z-index: 60;
+    z-index: 50;
     opacity: 0;
     transform: translateY(0px);
     transition:  opacity 0.3s, transform 0.5s; 
   }
   #noti-incorrecto>div{
+    
     display: none;
     background-color:#41270d;
     border: 5px solid red;
@@ -87,7 +88,7 @@
   #noti-incorrecto.mostrar-noti{
     display: flex;
     opacity: 1;
-    transform: translateY(-40px);
+    transform: translateY(-80px);
 }
   .carousel-inner{
     width: 100%;
@@ -482,7 +483,8 @@ textarea{
     width: 80%;
     height: 70%;
     resize: none;
-    padding: 15px;
+    padding-top: 15px;
+    padding-left: 17px;
     font-family: "Asap Condensed", sans-serif;
     font-size: 17px;
     background-color: #F1A36B;
@@ -514,7 +516,7 @@ textarea::placeholder{
     position: absolute;
     bottom: 10px;
     width: 80%;
-    
+
     border-top: 3px solid #FFDDA8;
     display: flex;
     justify-content: space-between;
@@ -525,6 +527,7 @@ textarea::placeholder{
 #footer > a{
     text-decoration: none;
     color: #FFDDA8;
+    z-index: 70;
 }
 #repo{
     display: flex;
@@ -848,7 +851,7 @@ textarea::placeholder{
     justify-content: center;
 }
 #div_registro{
-    background-color: rgb(145, 110, 3);
+    background-color: #D07825;
     color: white;
     height: 100vh;
     width: 0px;
@@ -856,19 +859,28 @@ textarea::placeholder{
 }
 #div_iniciar_sesion{
     flex-grow: 1;
-    background-image: url('background_images/fond_gris_login.png');
-    background-color:   rgb(145, 110, 3) ;
+    background-image: url('background_images/Desktop\ -\ 1\ \(1\).png');
+    background-color:  #D07825 ;
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
     height:  100vh;
     width: 100vh;
     transition: all 0.5s;
+    /* font-weight: 600; */
+    /* position: relative; */
+}
+#is-container, #re-container{
+    /* background-color: yellow; */
+   width: 400px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 #expandir_login,#expandir_registro{
-    height: 25px;
-    width: 25px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     text-align: center;
     font-size: 20px;
@@ -881,41 +893,60 @@ textarea::placeholder{
 #expandir_registro{
     display: none;
     position: absolute;
-    top: 20px;
+    top: 15px;
     right: 220px;
     transition: all 1.5s;
+   
 }
 #expandir_login{
     position: absolute;
-    left: 220px;
-    top: 20px;
+    left: 250px;
+    top: 15px;
 }
 #form_registro{
     display: none;
 }
 #form_registro,#form_login{
     text-align: center;
+    /* background-color: green; */
+    width: 90%;
 }
-.Titulo_de_Forms {
+.Titulo_is {
     font-size: 49px;
     font-weight: bold;
-    color: black;
-    margin-bottom: 30px;
     
+    margin-bottom: 30px;
+    color: #D07825;
+}
+.Titulo_re{
+    font-size: 49px;
+    font-weight: bold;
+    color: #FFDDA8;
+    margin-bottom: 30px;
 }
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="submit"],
-#btn-login {
-    width: 380px;
+#btn-login{
+    width: 300px;
+    height: 20px;
     padding: 10px;
     margin-bottom: 5px;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
 }
-#btn-login{
+
+/* #nombre_usuario{
+ 
+}
+#password_login{
+
+} */
+#btn-login, #btn-register{
     margin-top: 15px;
+    height: 30px;
+    width: 320px
 }
 input[type="submit"] {
     background-color: #007bff;
@@ -941,7 +972,7 @@ input[type="submit"]:hover {
     right: 15px;
     top: 15px;
     cursor: pointer;
-    height: 35px;
+    height: 50px;
 }
 #tengo_cuenta{
     cursor: pointer;
@@ -951,6 +982,7 @@ input[type="submit"]:hover {
 }
 .linia_or{
     margin: 20px 0 20px 0;
+    width: 100%;
 }
 input {
     border: none;
@@ -970,11 +1002,22 @@ textarea:focus {
 }
 
 .g-signin2{
+
     text-align: center;
-    width: 120px;
+    width: 100%;
     border-radius: 5px;
     margin-left: 35%;
     margin-bottom: 20px;
+    width: 400px;
+    
+}
+.g-signin2>div{
+    border-radius: 30px;
+    
+}
+.g-signin2>div>div{
+    width: 100px;
+    
 }
 /* -------------------------------------------------------------------------------------------------- */
 

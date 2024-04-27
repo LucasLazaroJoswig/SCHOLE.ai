@@ -32,12 +32,7 @@
 </head>
 
 <body onload="fInicio()">
-    <div id="noti-correcto" >
-        <div id="noti-content" >Correo enviado correctamente</div>
-    </div>
-    <div id="noti-incorrecto" >
-        <div id="noti-content" >Correo no enviado</div>
-    </div>
+    
     <div class="carousel-inner">
         
         <div id="carousel-item" class="section">
@@ -105,7 +100,7 @@
                         <div id="video-container" >
                         <video src="assets/videos/example.mp4" autoplay muted controls loop></video>
                         </div>
-                        <div id="iniciosesion-container" onclick="fAbrirModalLogin()">REGISTER</div>
+                        <div id="iniciosesion-container" onclick="fAbrirModalRegister()">REGISTER</div>
                     </div>
                 </div>
 
@@ -173,6 +168,12 @@
                     </a>
                     
                 </div>
+                <div id="noti-correcto" >
+                    <div id="noti-content" >Correo enviado correctamente</div>
+                </div>
+                <div id="noti-incorrecto" >
+                    <div id="noti-content" >Correo no enviado</div>
+                </div>
             </div>
         </div>
 
@@ -198,9 +199,10 @@
         
         <div id="div_registro">
             <!-- *Logo* -->
-            <img src="assets/images/Back_To.png" id="expandir_registro" title="expandir_registro" onclick="fExpandirRegistro()" alt="Expandir registro">
+            <img src="assets/images/Back To.png" id="expandir_registro" title="expandir_registro" onclick="fExpandirRegistro()" alt="Expandir registro">
+            <div id="re-container">
             <form id="form_registro" method="post">
-                <div class="Titulo_de_Forms" colspan="2">
+                <div class="Titulo_re" colspan="2">
                     Registro
                 </div>
                 <div>
@@ -225,10 +227,10 @@
                         required=""><br><br>
                 </div>
                 <div>
-                    <input name="enviar" type="submit" onclick="fControlRegistrar()">
+                    <input name="enviar" id="btn-register" type="submit" onclick="fControlRegistrar()">
                 </div>
                 <div id="rdiv_error">&nbsp;</div>
-                <div id="tengo_cuenta" onclick="fExpandirRegistro()">Tengo una cuenta</div>
+                <!-- <div id="tengo_cuenta" onclick="fExpandirRegistro()">Tengo una cuenta</div> -->
 
                 <div class="linia_or" style="display: flex; align-items: center;">
                     <hr style="flex: 1; border: 0; border-top: 2px solid white;">
@@ -236,15 +238,17 @@
                     <hr style="flex: 1; border: 0; border-top: 2px solid white;">
                 </div>
 
-                <div class="g_id_signin" data-type="standard"></div>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
                 <a href="#" onclick="signOut();">Sign out</a>
             </form>
         </div>
+        </div>
 
         <div id="div_iniciar_sesion">
-            <img src="assets/images/Next_page.png" id="expandir_login" onclick="fExpandirLogin()" title="expandir_login" alt="Expandir login">
+            <img src="assets/images/Next page.png" id="expandir_login" onclick="fExpandirLogin()" title="expandir_login" alt="Expandir login">
+            <div id="is-container">
             <form id="form_login">
-                <div class="Titulo_de_Forms">
+                <div class="Titulo_is">
                     Inicio sesion
                 </div>
                 <div>
@@ -257,18 +261,19 @@
                     <input type="password" id="password_login" name="password" placeholder="Contraseña">
                 </div>
                 <div class="td_login">
-                    <input type="submit" id="btn-login" value="Iniciar sesión" onclick="fControlLogin()">
+                    <input type="submit" id="btn-login" value="Continuar" onclick="fControlLogin()">
                 </div>
                 <div id="div_error">&nbsp;</div>
 
                 <div class="linia_or" style="display: flex; align-items: center;">
-                    <hr style="flex: 1; border: 0; border-top: 2px solid black;">
-                    <span style="margin: 0 10px; color: black;">OR</span>
-                    <hr style="flex: 1; border: 0; border-top: 2px solid black;">
+                    <hr style="flex: 1; border: 0; border-top: 2px solid #3F250D;">
+                    <span style="margin: 0 10px; color: #3F250D;">OR</span>
+                    <hr style="flex: 1; border: 0; border-top: 2px solid #3F250D;">
                 </div>
                 <div class="g_id_signin" data-type="standard"></div>
                 
             </form>
+        </div>
         </div>
         <img src="assets/images/Home.png" id="home" alt="Home"onclick="fCerrarLogin()">
     </div>
