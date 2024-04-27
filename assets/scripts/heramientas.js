@@ -11,3 +11,6 @@ function fRedirectWebDiocles(){
 function fRedirectWebArquimedes(){
     window.location.href = "arquimedes.html";
 }
+function fRedirectWebDeivi(){
+    window.location.href = "deivi.html";
+}
