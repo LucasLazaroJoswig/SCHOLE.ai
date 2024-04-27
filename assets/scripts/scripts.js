@@ -121,7 +121,7 @@ function fInicio(){
 
 	// -----------------------Script para el scroll-------------------------
 	// const panels = gsap.utils.toArray(".carousel-item");
-	const items = gsap.utils.toArray("#carousel-item");
+	// const items = gsap.utils.toArray("#carousel-item");
 	// const controls = document.querySelectorAll(".carousel-navigation li");
 	// controls.forEach((item, i) => {
 	//   item.addEventListener("click", () => {
@@ -227,7 +227,7 @@ function fOcultarOptionsHeader() {
 
 function fAbrirModalLogin() {
     document.querySelector("#form_login_inicio_sesion").style.display = "flex";
-    fExpandirRegister();
+    fExpandirRegistro();
 }
 function fAbrirModalRegister() {
   document.querySelector("#form_login_inicio_sesion").style.display = "flex";
