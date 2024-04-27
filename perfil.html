@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="assets/estilos/perfil.css">
+        <script src="assets/scripts/scripts.js"></script>
+        <script src="assets/scripts/heramientas.js"></script>
+        <!-- Fuente -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+        <title>Perfil</title>
+    </head>
+<body onload="fConfiguracion()">
+    <header>
+        <h1 id="titulo_app"><a href="index.html">SCHOLE.AI</a></h1>       
+        <h2 id="titulo_panel"><u>Perfil</u></h2>
+        <img id="foto_perfil" src="assets/images/Panel_de_herramientas/Male_User.png" alt="" />
+    </header>
+    <section>
+        <div id="div_cont_herramientas"> 
+        <div id="usu_foto_y_alias">
+            <div id="foto_perfil1"><img id="foto_perfil2" src="assets/images/Male User.png" alt="" /></div>
+            <div id="nombre_apellidos"></div>
+        </div>
+        <div id="info_basica">Información básica</div>
+        <div id="info_usu">
+            <div id="nombre">
+                <div>Alias</div>
+                <div id="nombre_usu"></div>
+            </div>
+            <div id="correo">
+                <div>Correo electrónico</div>
+                <div id="correo_usu"></div>
+            </div>
+            <div id="Contraseña">
+                <div>Contraseña</div>
+                <div id="contra_usu" onclick="fCambiarContraseña()"><u>Cambiar contraseña</u></div>
+            </div>
+        </div>
+        </div>
+    </section>
+</body>
+</html>
