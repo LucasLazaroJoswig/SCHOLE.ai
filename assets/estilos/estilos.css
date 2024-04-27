@@ -10,6 +10,86 @@
   ::-webkit-scrollbar {
     display: none;
   }
+
+  #noti-correcto{
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    height: 70px;
+    width: 100%;
+    opacity: 0;
+    justify-content: center;
+    align-self: center;
+    z-index: 50;
+    opacity: 0;
+    transform: translateY(0px);
+    transition:  opacity 0.3s, transform 0.5s; 
+  }
+  #noti-correcto>div{
+    display: none;
+    background-color:#41270d;
+    border: 5px solid green;
+    border-radius: 30px ;
+    padding: 0 10px 0 10px;
+    height: 100%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    /* color: #FFDDA8; */
+    color: green;
+
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.45);
+     
+  }
+  #noti-correcto.mostrar-noti{
+    display: flex;
+    opacity: 1;
+    transform: translateY(-80px);
+}
+#noti-incorrecto{
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    height: 70px;
+    width: 100%;
+    opacity: 0;
+    justify-content: center;
+    align-self: center;
+    z-index: 50;
+    opacity: 0;
+    transform: translateY(0px);
+    transition:  opacity 0.3s, transform 0.5s; 
+  }
+  #noti-incorrecto>div{
+    
+    display: none;
+    background-color:#41270d;
+    border: 5px solid red;
+    border-radius: 30px ;
+    padding: 0 10px 0 10px;
+    height: 100%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    /* color: #FFDDA8; */
+    color: red;
+
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.45);
+     
+  }
+  #noti-incorrecto.mostrar-noti{
+    display: flex;
+    opacity: 1;
+    transform: translateY(-80px);
+}
   .carousel-inner{
     width: 100%;
     scroll-behavior: smooth;
@@ -194,7 +274,7 @@
     justify-content: center;
     align-items: center;
     font-family: "Asap Condensed", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
     font-size: 30px;
 }
@@ -246,7 +326,7 @@
     font-family: "Asap Condensed", sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 25px;
+    font-size: 30px;
     cursor: pointer;
     transition: .5s;
 }
@@ -267,9 +347,9 @@
 .card{
     width: 180px;
     height: 220px;
-    background-color: #4B2B10;
+    /* background-color: #4B2B10;
     border-radius: 30px;
-    border: 7px solid #6A401D;
+    border: 7px solid #6A401D; */
     font-family: "Asap Condensed", sans-serif;
     font-weight: 600;
     font-style: italic;
@@ -281,9 +361,43 @@
     padding: 20px;
     margin-bottom: 5px;
     text-align: center;
-    box-shadow: 0px 6px 10px 0px rgba(235,139,95,1);
     transition: all ease .3s;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+    cursor: pointer;
 }
+.front:hover{
+    /* width: 200px;
+    height: 240px; */
+    transform: scale(1.1);
+    
+}
+.front, .back {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 6px 10px 0px rgba(235,139,95,1);
+    transition: all ease .3s, transform .5s;
+  }
+ .front{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #4B2B10;
+    border-radius: 30px;
+    border: 7px solid #6A401D;
+ }
+  .back {
+    color: #41270d;
+    transform: rotateY(180deg);
+    background-color: #FFDDA8;
+    border-radius: 30px;
+  }
 #cards-tittle{
     width: 100%;
     display: flex;
@@ -301,10 +415,161 @@
     z-index: -10;
     width: 200px;
 }
+
 #spacer2{
     position: relative;
     background-color: blue;
     
+}
+#contact-us-section{
+    z-index: 40;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: blue; */
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: top ;
+    position: relative;
+}
+#wrapper{
+    margin-top: 40px;
+    width: 80%;
+    height: 80%;
+    /* margin-bottom: 100px; */
+    /* background-color: green; */
+}
+#contact-us-text{
+    width: 100%;
+    height: 25%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    /* margin-bottom: 30px; */
+    color: #FFDDA8;
+}
+#somos-tittle{
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+    width: 100%;
+    height: 50px;
+    /* background-color: blue; */
+}
+#somos-content{
+    font-size: 20px;
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    width: 80%;
+    /* background-color: green; */
+    height: 100%;
+}
+#contact-us-form{
+    width: 100%;
+    height: 75%;
+    background-color: #FFDDA8;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    
+}
+#contact-us-form>div{
+    /* background-color: red; */
+    width: 80%;
+    font-family: "Asap Condensed", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 25px;
+
+}
+form{
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 95%;
+    width: 100%;
+    
+}
+#correo  {
+    border-radius: 30px;
+    width: 80%;
+    height: 30px;
+    font-family: "Asap Condensed", sans-serif;
+    font-size: 20px;
+    padding-left: 17px;
+    background-color: #F1A36B;
+}
+#correo::placeholder{
+    color: black;
+}
+textarea{
+    border-radius: 30px;
+    width: 80%;
+    height: 70%;
+    resize: none;
+    padding-top: 15px;
+    padding-left: 17px;
+    font-family: "Asap Condensed", sans-serif;
+    font-size: 17px;
+    background-color: #F1A36B;
+    transition: box-shadow 0.3s ease;
+    border: 0px; 
+}
+textarea::placeholder{
+    color: black;
+    font-size: 20px;
+}
+#submit{
+    width: 80%;
+    display: flex;
+    justify-content: right;
+}
+#submit >input{
+    width: 150px;
+    border-radius:30px ;
+    background-color: #F1A36B;
+    color: black;
+    font-size: 20px;
+    font-family: "Asap Condensed", sans-serif;
+    transition: all ease .3s;
+}
+#submit >input:hover{
+    background-color: #c28052;
+}
+#footer{
+    position: absolute;
+    bottom: 10px;
+    width: 80%;
+
+    border-top: 3px solid #FFDDA8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFDDA8;
+    font-family: "Asap Condensed", sans-serif;
+}
+#footer > a{
+    text-decoration: none;
+    color: #FFDDA8;
+    z-index: 70;
+}
+#repo{
+    display: flex;
+    align-items: center;
+}
+#repo>svg{
+    margin-right: 5px;
 }
 #util{
     display: flex;
@@ -407,11 +672,11 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
+            align-items: left;
             font-family: "Asap Condensed", sans-serif;
-            font-weight: 400;
+            font-weight: 500;
             font-style: normal;
-            font-size: 25px;
+            font-size: 26px;
         }
         #text-container div{
            width: 85%;
@@ -475,6 +740,16 @@
             width: 200px;
             height: 250px;
             margin: 10px;
+        }
+        #wrapper{
+            width: 75%;
+            margin-top: 20px;
+        }
+        #somos-tittle{
+            font-size: 35px;
+        }
+        #cards-tittle{
+            font-size: 40px;
         }
 }
 @media screen AND (min-width:1600px) {
@@ -575,14 +850,26 @@
         top: 40px;
     }
     #cards-tittle > img{
-        width: 340px;
-        
-}
+        width: 340px;      
+    }
+    #wrapper{
+        width: 50%;
+    }
+    #footer{
+        width: 70%;
+    }
+    #somos-tittle{
+        font-size: 40px;
+    }
+    #somos-content{
+        font-size: 25px;
+    }
 }
 
 
 
 #form_login_inicio_sesion{
+    font-family: "Asap Condensed", sans-serif;
     position: fixed;
     left:0;
     top: 0;
@@ -591,7 +878,7 @@
     flex-direction: row;
     width: 100%;
     height: 100%;
-    z-index: 10;
+    z-index: 100;
 }
 #div_registro,#div_iniciar_sesion{
     display: flex;
@@ -599,7 +886,7 @@
     justify-content: center;
 }
 #div_registro{
-    background-color: rgb(145, 110, 3);
+    background-color: #D07825;
     color: white;
     height: 100vh;
     width: 0px;
@@ -607,19 +894,28 @@
 }
 #div_iniciar_sesion{
     flex-grow: 1;
-    background-image: url('background_images/fond_gris_login.png');
-    background-color:   rgb(145, 110, 3) ;
+    background-image: url('background_images/Desktop\ -\ 1\ \(1\).png');
+    background-color:  #D07825 ;
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
     height:  100vh;
     width: 100vh;
     transition: all 0.5s;
+    /* font-weight: 600; */
+    /* position: relative; */
+}
+#is-container, #re-container{
+    /* background-color: yellow; */
+   width: 400px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 #expandir_login,#expandir_registro{
-    height: 25px;
-    width: 25px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     text-align: center;
     font-size: 20px;
@@ -632,41 +928,60 @@
 #expandir_registro{
     display: none;
     position: absolute;
-    top: 20px;
+    top: 15px;
     right: 220px;
     transition: all 1.5s;
+   
 }
 #expandir_login{
     position: absolute;
-    left: 220px;
-    top: 20px;
+    left: 250px;
+    top: 15px;
 }
 #form_registro{
     display: none;
 }
 #form_registro,#form_login{
     text-align: center;
+    /* background-color: green; */
+    width: 90%;
 }
-.Titulo_de_Forms {
+.Titulo_is {
     font-size: 49px;
     font-weight: bold;
-    color: black;
-    margin-bottom: 30px;
     
+    margin-bottom: 30px;
+    color: #D07825;
+}
+.Titulo_re{
+    font-size: 49px;
+    font-weight: bold;
+    color: #FFDDA8;
+    margin-bottom: 30px;
 }
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="submit"],
-#btn-login {
-    width: 380px;
+#btn-login{
+    width: 300px;
+    height: 20px;
     padding: 10px;
     margin-bottom: 5px;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
 }
-#btn-login{
+
+/* #nombre_usuario{
+ 
+}
+#password_login{
+
+} */
+#btn-login, #btn-register{
     margin-top: 15px;
+    height: 30px;
+    width: 320px
 }
 input[type="submit"] {
     background-color: #007bff;
@@ -692,7 +1007,7 @@ input[type="submit"]:hover {
     right: 15px;
     top: 15px;
     cursor: pointer;
-    height: 35px;
+    height: 50px;
 }
 #tengo_cuenta{
     cursor: pointer;
@@ -702,6 +1017,7 @@ input[type="submit"]:hover {
 }
 .linia_or{
     margin: 20px 0 20px 0;
+    width: 100%;
 }
 input {
     border: none;
@@ -711,15 +1027,32 @@ input {
 input:focus {
     outline: none;
     border: 1px solid transparent;
-    background-color: #bed0e3;
+    
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); 
 }
+textarea:focus {
+    outline: none;
+    border: 1px solid transparent;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); 
+}
+
 .g-signin2{
+
     text-align: center;
-    width: 120px;
+    width: 100%;
     border-radius: 5px;
     margin-left: 35%;
     margin-bottom: 20px;
+    width: 400px;
+    
+}
+.g-signin2>div{
+    border-radius: 30px;
+    
+}
+.g-signin2>div>div{
+    width: 100px;
+    
 }
 /* -------------------------------------------------------------------------------------------------- */
 

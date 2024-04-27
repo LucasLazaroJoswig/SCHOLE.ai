@@ -48,6 +48,8 @@ window.onscroll = () => {
 
 
 function fInicio(){
+  // document.getElementById('noti').classList.remove('mostrar-noti');
+  
   gsap.to("#sol",{
     scrollTrigger:{
       trigger:"#sol",
@@ -172,6 +174,40 @@ function fInicio(){
 	// });
 	//----------------------------------------------------------------
 }
+function flip(event){
+  var element = event.currentTarget;
+  if (element.className === "card") {
+    if(element.style.transform == "rotateY(180deg)") {
+      element.style.transform = "rotateY(0deg)";
+    }
+    else {
+      element.style.transform = "rotateY(180deg)";
+    }
+  }
+};
+function timeout(){
+  setTimeout(fLimpiarInputContactos, 1000)
+let correo = document.querySelector("#correo").value
+let mensaje = document.querySelector("#mensaje").value
+  if(correo != "" || mensaje != ""){
+    document.getElementById('noti-correcto').classList.add('mostrar-noti');
+    setTimeout(fQuitarNoti, 3000)
+  }
+  else{
+    console.log("incorrecto")
+    document.getElementById('noti-incorrecto').classList.add('mostrar-noti');
+    setTimeout(fQuitarNoti, 3000)
+  }
+}
+function fQuitarNoti(){
+  document.getElementById('noti-correcto').classList.remove('mostrar-noti');
+  document.getElementById('noti-incorrecto').classList.remove('mostrar-noti');
+}
+function fLimpiarInputContactos(){
+  document.getElementById("correo").value="";
+  document.getElementById("mensaje").value="";
+}
+
 function fMostrarOptionsHeader() {
   document.getElementById('hamb-options-header').classList.add('mostrar');
   // document.querySelector("#hamb-options-header").style.display="flex"
@@ -191,6 +227,11 @@ function fOcultarOptionsHeader() {
 
 function fAbrirModalLogin() {
     document.querySelector("#form_login_inicio_sesion").style.display = "flex";
+    fExpandirRegister();
+}
+function fAbrirModalRegister() {
+  document.querySelector("#form_login_inicio_sesion").style.display = "flex";
+  fExpandirLogin();
 }
 function fCerrarLogin() {
     document.querySelector("#form_login_inicio_sesion").style.display = "none";
@@ -224,10 +265,45 @@ function fExpandirRegistro() {
 // Recoge los datos del usuario logeadp de Google y los saca por pantalla 
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('ID: ' + profile.getId());
     console.log('Name: ' + profile.getName());
     console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    console.log('Email: ' + profile.getEmail()); 
+
+    let usu_nombre = profile.getName();
+    let usu_email = profile.getEmail();
+    let Image_URL = profile.getImageUrl();
+    let password = "Random";
+
+    
+    let URL = 'assets/php/servidor.php?peticion=ControlRegistroGoogle';
+    URL += "&usu_nombre=" + usu_nombre;
+    URL += "&usu_alias=" + usu_nombre;
+    URL += "&usu_email=" + usu_email;
+    URL += "&Image_URL=" + Image_URL;
+    URL += "&password=" + password;
+    console.log("Parametros del login-Google")
+    console.log("nombre: ",usu_nombre)
+    console.log("alias_usu: ",usu_alias)
+    console.log("email: ",usu_email)
+    console.log("Image_URL: ",Image_URL)
+    console.log("password: ",password)
+    fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log("REGISTRO GOOGLE", data);
+            if (data.datos == 0) {
+                document.querySelector("#rdiv_error").innerHTML = "Inténtelo más tarde";
+                return;
+            }
+            // // Mostrar un mensaje
+            // document.querySelector("#mensaje").innerHTML = "Registro correcto";
+            // fMostrar("form_mensaje");
+            // // Pasado x tiempo, mostrar el formulario de login
+            // evento = setTimeout(fCerrarEvento, 2000);
+
+
+        })
 }
 
 // Cierra la sesión del uuario en la app 
@@ -244,20 +320,20 @@ function signOut() {
 
 function fControlRegistrar() {
     // Leer el nombre
-    let nombre = document.querySelector("#nombre").value;
-    if (nombre == "") {
+    let usu_nombre = document.querySelector("#nombre").value;
+    if (usu_nombre == "") {
         document.querySelector("#rdiv_error").innerHTML = "Escriba su Nombre";
         return;
     }
     // Leer el nombre de usuario
-    let nombre_usu = document.querySelector("#nombre_usuario").value;
-    if (nombre_usu == "") {
+    let usu_alias = document.querySelector("#nombre_usuario").value;
+    if (usu_alias == "") {
         document.querySelector("#rdiv_error").innerHTML = "Escriba su Nombre de usuario";
         return;
     }
     // Leer el email
-    let email =  document.querySelector("#email_registro").value;
-    if (email == "") {
+    let usu_email =  document.querySelector("#email_registro").value;
+    if (usu_email == "") {
         document.querySelector("#rdiv_error").innerHTML = "Escriba su email";
         return;
     }
@@ -275,14 +351,14 @@ function fControlRegistrar() {
     }
     
     let URL = 'assets/php/servidor.php?peticion=ControlRegistro';
-    URL += "&nombre=" + nombre;
-    URL += "&nombre_usu=" + nombre_usu;
-    URL += "&email=" + email;
+    URL += "&usu_nombre=" + usu_nombre;
+    URL += "&usu_alias=" + usu_alias;
+    URL += "&usu_email=" + usu_email;
     URL += "&password=" + password;
     console.log("Parametros del login")
-    console.log("nombre: ",nombre)
-    console.log("nombre_usu: ",nombre_usu)
-    console.log("email: ",email)
+    console.log("nombre: ",usu_nombre)
+    console.log("alias_usu: ",usu_alias)
+    console.log("email: ",usu_email)
     console.log("password: ",password)
     fetch(URL)
         .then((response) => response.json())
@@ -300,4 +376,44 @@ function fControlRegistrar() {
 
 
         })
+}
+
+function fControlLogin() {
+    // Leer el alias
+  let alias = document.querySelector("#nombre_usuario").value;
+  // Comprobando que el alias no este vacio
+ if (alias == ""){
+   document.querySelector("#div_error").innerHTML = "Escriba su Alias";
+   return;
+ }
+ // Leer el password
+ let password = document.querySelector("#password").value;
+  // Comprobando que el password no este vacio
+ if (password == ""){
+   document.querySelector("#div_error").innerHTML = "Escriba la Contraseña";
+   return;
+ }
+ // Buscar el alias y el password en la BBDD
+ 
+ let URL = 'assets/php/servidor.php?peticion=ControlLogin';
+ URL += "&alias=" + alias;
+ URL += "&password=" + password;
+ fetch(URL)
+     .then((response) => response.json())
+     .then((data) => {
+         console.log(data);
+
+         // Si es correcto
+         if (data.datos.length == 0){
+             document.querySelector("#div_error").innerHTML = "Usuario no registrado";
+             return;
+         }
+         usuario_logeado = data.datos[0];
+         console.log('usuario_logeado: ',usuario_logeado)
+     })
+     .finally( function(){
+         // fCancelar();
+        
+
+     })
 }
