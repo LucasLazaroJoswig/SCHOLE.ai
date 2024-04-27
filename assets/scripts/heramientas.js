@@ -14,3 +14,18 @@ function fRedirectWebArquimedes(){
 function fRedirectWebDeivi(){
     window.location.href = "deivi.html";
 }
+
+function fDesplegablePerfil(){
+    
+    let html= "";
+
+            html+= "<div id='sel_perfil'>"
+            html+='<a href="perfil.html">Perfil</a>'
+        html+="</div>"
+        html+="<div id='cerrar_sesion'>"
+            html+= '<a href="index.html">Cerrar Sesión</a>'
+        html+= "</div>";
+        document.querySelector("#opt_perfil").innerHTML=html;
+
+        document.querySelector("#opt_perfil").style.display= "block";   
+}
