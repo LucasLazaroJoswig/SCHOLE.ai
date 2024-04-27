@@ -10,6 +10,7 @@
 
 
 ## IA para el aprendizaje de contenidos
+## https://scholeai.com/
 
 Proyecto desarrollado para la Hackathon del Dev y para la asignatura de Lenguaje de Marcas de 1º de DAW\
 [Diseño de Figma](https://www.figma.com/file/eWo2mdORMwxsVvnKnIAul9/Hackathon?type=design&node-id=0-1&mode=design&t=MSCHtQtmoSznmgsI-0) · [Reportar error](https:/LucasLazaroJoswig/SCHOLE.ai/github.com//issues) · [Sugerir algo](https://github.com/LucasLazaroJoswig/SCHOLE.ai/issues)
@@ -18,9 +19,9 @@ Proyecto desarrollado para la Hackathon del Dev y para la asignatura de Lenguaje
 
 ## Herraminentas principales
 
-- **Explición de apuntes**: Sube tus apuntes y recibirás una explicacion detallada.
+- **Explición de apuntes**: Sube tus apuntes y recibirás una explicacion detallada (Proximamente).
 - **Especialización en materias**: Aprende sobre cualquier tema que quieras.
-- **Generador de examenes**: Evalua tus conocimientos con examenes basados en tus apuntes.
+- **Generador de examenes**: Evalua tus conocimientos con examenes basados en tus apuntes (Proximamente).
 
 ### Capturas de pantalla de la web
 
