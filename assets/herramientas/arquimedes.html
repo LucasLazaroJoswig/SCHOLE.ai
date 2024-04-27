@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos/profesor_particular.css">
+    <link rel="stylesheet" href="../../assets/estilos/ia.css">
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="../scripts/ia.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Profesor particular</title>
+</head>
+<body>
+
+    <header>
+        <h1 id="titulo_app"><a href="../../index.html" target="_blank" rel="noopener noreferrer">SCHOLE.AI</a></h1>
+        <a href="../../panel.html"><h2 id="titulo_panel">Panel de herramientas </a> &nbsp;>&nbsp; <a href="Profesor_particular.html">Profesor Particular</a> &nbsp;>&nbsp; <u>Física y Química</u></h2> 
+        <img id="foto_perfil" src="../images/Panel_de_herramientas/Male_User.png" alt="" />
+    </header>
+
+    <section>
+        <div id="div_cont">
+           
+        </div>
+    </section>
+    
+
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+              window.voiceflow.chat.load({
+                verify: { projectID: '662b4a4cfe341c2e3b61c5fc' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                render: {
+	                mode: 'embedded',
+	                target: document.getElementById('div_cont'),
+                },
+                autostart:true,
+                assistant: {
+                    title: "Arquimedes",
+                    description: "Tu profe particular de física y química",
+                    image:"../../assets/images/Panel_de_herramientas/GriegoFyQ.png",
+                    stylesheet: "../../assets/estilos/ia.css"
+}
+              });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+      </script>
+
+</body>
+</html>
