@@ -8,3 +8,6 @@ function fRedirectWebGEneradorApuntes() {
 function fRedirectWebDiocles(){
     window.location.href = "diocles.html";
 }
+function fRedirectWebArquimedes(){
+    window.location.href = "arquimedes.html";
+}
