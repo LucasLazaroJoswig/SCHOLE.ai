@@ -1,6 +1,6 @@
 let sections = document.querySelectorAll('.section')
 let navLinks = document.querySelectorAll('div a')
-
+let usuario_logeado=""
 
 // window.addEventListener('resize', function(){
 
@@ -121,7 +121,7 @@ function fInicio(){
 
 	// -----------------------Script para el scroll-------------------------
 	// const panels = gsap.utils.toArray(".carousel-item");
-	const items = gsap.utils.toArray("#carousel-item");
+	// const items = gsap.utils.toArray("#carousel-item");
 	// const controls = document.querySelectorAll(".carousel-navigation li");
 	// controls.forEach((item, i) => {
 	//   item.addEventListener("click", () => {
@@ -227,7 +227,7 @@ function fOcultarOptionsHeader() {
 
 function fAbrirModalLogin() {
     document.querySelector("#form_login_inicio_sesion").style.display = "flex";
-    fExpandirRegister();
+    fExpandirRegistro();
 }
 function fAbrirModalRegister() {
   document.querySelector("#form_login_inicio_sesion").style.display = "flex";
@@ -419,4 +419,9 @@ function fControlLogin() {
         
 
      })
+}
+function fConfiguracion(){
+  document.querySelector("#nombre_usu").innerHTML=usuario_logeado.usu_alias;
+  document.querySelector("#correo_usu").innerHTML=usuario_logeado.usu_email;
+  document.querySelector("#nombre_apellidos").innerHTML=usuario_logeado.usu_nombre;
 }
