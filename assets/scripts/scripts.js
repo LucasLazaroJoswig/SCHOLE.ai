@@ -368,6 +368,7 @@ function fControlRegistrar() {
                 document.querySelector("#rdiv_error").innerHTML = "Inténtelo más tarde";
                 return;
             }
+            fRedirectWebPanel();
             // // Mostrar un mensaje
             // document.querySelector("#mensaje").innerHTML = "Registro correcto";
             // fMostrar("form_mensaje");
@@ -383,11 +384,11 @@ function fControlLogin() {
   let alias = document.querySelector("#nombre_usuario").value;
   // Comprobando que el alias no este vacio
  if (alias == ""){
-   document.querySelector("#div_error").innerHTML = "Escriba su Alias";
+   document.querySelector("#nombre_usuario").innerHTML = "Escriba su Alias";
    return;
  }
  // Leer el password
- let password = document.querySelector("#password").value;
+ let password = document.querySelector("#password_login").value;
   // Comprobando que el password no este vacio
  if (password == ""){
    document.querySelector("#div_error").innerHTML = "Escriba la Contraseña";
@@ -402,12 +403,14 @@ function fControlLogin() {
      .then((response) => response.json())
      .then((data) => {
          console.log(data);
-
+         alert("Se ha logeado")
          // Si es correcto
          if (data.datos.length == 0){
              document.querySelector("#div_error").innerHTML = "Usuario no registrado";
              return;
          }
+         alert("Se logeado")
+         fRedirectWebPanel();
          usuario_logeado = data.datos[0];
          console.log('usuario_logeado: ',usuario_logeado)
      })

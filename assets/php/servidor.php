@@ -32,7 +32,7 @@ if (isset($_REQUEST['peticion'])) {
             $subject = 'Confirmación de correo electrónico';
             $message = 'Haz clic en el siguiente enlace para confirmar tu correo electrónico: http://tusitio.com/confirmar-correo?token=abcd1234';
             $headers = 'From: deivi54357326@gmail.com' . "\r\n" .
-                        'anamarvelperdomo@gmail.com' . "\r\n" .
+                        'deivi54357326@gmail.com' . "\r\n" .
                         'X-Mailer: PHP/' . phpversion();
 
             $mail=mail($to, $subject, $message, $headers);
