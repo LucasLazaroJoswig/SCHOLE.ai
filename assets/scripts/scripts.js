@@ -422,3 +422,28 @@ function fConfiguracion(){
   document.querySelector("#correo_usu").innerHTML=usuario_logeado.usu_email;
   document.querySelector("#nombre_apellidos").innerHTML=usuario_logeado.usu_nombre;
 }
+function fCambiarContrasena(){
+  let password = document.querySelector("#password_registro").value;
+  let password2 = document.querySelector("#rpassword_registro").value;
+  if (password == "") {
+      document.querySelector("#rdiv_error").innerHTML = "Escriba su Contraseña";
+      return;
+  }
+  // Comprobar los password
+  if (password != password2) {
+      document.querySelector("#rdiv_error").innerHTML = "Las contraseñas no coinciden";
+      return;
+  }
+  let URL = 'assets/php/servidor.php?peticion=CambiarContrasena';
+  URL += "&password=" + password;
+  URL+= "&usu_id=" +usuario_logeado.usu_id
+  fetch(URL)
+      .then((response) => response.json())
+      .then((data) => {
+          if (data.datos == 0) {
+              document.querySelector("#rdiv_error").innerHTML = "Inténtelo más tarde";
+              return;
+          }
+
+      })
+}

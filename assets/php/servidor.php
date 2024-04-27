@@ -85,8 +85,18 @@ if (isset($_REQUEST['peticion'])) {
             $datos['datos'] = BBDD_CTRLR::Consultas($sql);
             // Devuelvo a JS los datos codificados como JSON
             echo json_encode($datos);  
-            break; 
-
+            break;
+        case "CambiarContrasena":
+            $password = $_REQUEST['password'];
+            $usu_id = $_REQUEST['usu_id'];
+            // Preparo el SQL   
+            $sql = "UPDATE `usuarios` SET `usu_password`=md5('$password') WHERE usu_id=$usu_id;";
+            $datos['sql']=$sql;
+            // Ejecuto el SQL guardando el resultado
+            $datos['datos'] = BBDD_CTRLR::CRUD($sql, '');
+            // Devuelvo a JS los datos codificados como JSON
+            echo json_encode($datos);  
+            break;
     }             
 }   
         

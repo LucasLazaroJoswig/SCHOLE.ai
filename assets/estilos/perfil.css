@@ -137,6 +137,7 @@ section{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    border-bottom: 2px black solid;
+    border-bottom: 1px black solid;
+    padding: 10px;
 }
 
