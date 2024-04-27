@@ -37,6 +37,7 @@ header{
     position: absolute;
     right: 10px;
     top: 8px;
+    cursor: pointer;
 }
 section{
     grid-area: zs;
@@ -66,7 +67,7 @@ section{
     align-items: center;
     background-color: #F3BF99;
     height: 463px;
-    width: 950px;
+    width: 1000px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
