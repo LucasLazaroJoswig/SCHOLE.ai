@@ -15,6 +15,10 @@ function fRedirectWebDeivi(){
     window.location.href = "deivi.html";
 }
 
+function fRedirectWebPanel() {
+    window.location.href = "panel.html";
+}
+
 function fDesplegablePerfil(){
     
     let html= "";

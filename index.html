@@ -21,18 +21,22 @@
 
     <!-- Carga el script platform.js desde la URL proporcionada de Google. 
             Este script contiene las funciones necesarias para integrar los servicios de Google en la página web -->
-        <script src="https://accounts.google.com/gsi/client" async defer></script>    <!-- Especifica el ID del cliente necesario para la autenticación de Google. El contenido del atributo content es 
-            el ID del cliente asociado con la aplicación web en la consola de desarrolladores de Google. Este ID se 
-            utiliza para identificar la aplicación cuando se realiza la autenticación con Google. -->
-            <div id="g_id_onload"
-            data-client_id="76666712146-7s9nc15pikb8fikrb7h2ihejbibdb96j.apps.googleusercontent.com"
-            data-callback="handleCredentialResponse">
-       </div>
+        <script src="https://accounts.google.com/gsi/client" async defer></script>   
+        
 
 </head>
 
 <body onload="fInicio()">
+     <!-- Especifica el ID del cliente necesario para la autenticación de Google. El contenido del atributo content es 
+            el ID del cliente asociado con la aplicación web en la consola de desarrolladores de Google. Este ID se 
+            utiliza para identificar la aplicación cuando se realiza la autenticación con Google. -->
     
+       
+    <div id="g_id_onload"
+        data-client_id="76666712146-7s9nc15pikb8fikrb7h2ihejbibdb96j.apps.googleusercontent.com"
+        data-ux_mode="redirect"
+        data-login_uri="https://www.scholeai.com/panel.html">
+    </div>
     <div class="carousel-inner">
         
         <div id="carousel-item" class="section">
