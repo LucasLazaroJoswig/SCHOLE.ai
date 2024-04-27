@@ -1,6 +1,6 @@
 <?php
 
-define ("SERVIDOR", "localhost");
-define ("USUARIO", "root");
-define ("PASSWORD", "");
-define ("BBDD", "bd_scholeai");
+define ("SERVIDOR", "qajk399.scholeai.com");
+define ("USUARIO", "qajk399");
+define ("PASSWORD", "Practica2024");
+define ("BBDD", "qajk399");
